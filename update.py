@@ -8,7 +8,8 @@ from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Europe/Paris")
-JOURS = 8  # nombre de jours de matchs à venir (l'API gratuite limite à 10)
+JOURS = 7     # jours de matchs à venir
+ARRIERE = 14  # jours passés gardés (matchs terminés, pour comparer prédictions et résultats)
 LIGUES = {"PL": "Premier League", "FL1": "Ligue 1", "PD": "La Liga", "SA": "Serie A", "BL1": "Bundesliga"}
 CSV = ["E0", "F1", "SP1", "I1", "D1"]
 
@@ -84,12 +85,19 @@ def get(url, headers=None):
 
 def matchs(token, debut=None):
     debut = debut or date.today()
-    url = ("https://api.football-data.org/v4/matches?dateFrom=%s&dateTo=%s&competitions=PL,FL1,PD,SA,BL1,CL"
-           % (debut, debut + timedelta(days=JOURS)))
-    data = json.loads(get(url, {"X-Auth-Token": token}))
+    fin = debut + timedelta(days=JOURS)
+    cur, ms = debut - timedelta(days=ARRIERE), []
+    while cur <= fin:  # l'API gratuite limite chaque requête à ~10 jours : on découpe
+        to = min(cur + timedelta(days=9), fin)
+        url = ("https://api.football-data.org/v4/matches?dateFrom=%s&dateTo=%s&competitions=PL,FL1,PD,SA,BL1,CL"
+               % (cur, to))
+        ms += json.loads(get(url, {"X-Auth-Token": token})).get("matches", [])
+        cur = to + timedelta(days=1)
+    data = {"matches": ms}
     items, inconnus = [], set()
     for m in data.get("matches", []):
-        if m.get("status") not in ("SCHEDULED", "TIMED"):
+        st = m.get("status")
+        if st not in ("SCHEDULED", "TIMED", "IN_PLAY", "PAUSED", "FINISHED"):
             continue
         h, a = m["homeTeam"], m["awayTeam"]
         nh, na = nom_outil(h), nom_outil(a)
@@ -108,6 +116,14 @@ def matchs(token, debut=None):
               "h": nh or h.get("shortName") or h["name"], "a": na or a.get("shortName") or a["name"]}
         if coupe:
             it["C"] = "Ligue des champions"
+        if st in ("IN_PLAY", "PAUSED"):
+            it["live"] = True
+        if st in ("IN_PLAY", "PAUSED", "FINISHED"):
+            ft = (m.get("score") or {}).get("fullTime") or {}
+            if ft.get("home") is not None and ft.get("away") is not None:
+                it["s"] = [ft["home"], ft["away"]]
+            if st == "FINISHED":
+                it["f"] = 1
         items.append(it)
     items.sort(key=lambda x: (x["d"], x["t"]))
     if inconnus:
