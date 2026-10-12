@@ -1,4 +1,3 @@
-yaml
 name: Mise à jour des matchs
 on:
   schedule:
