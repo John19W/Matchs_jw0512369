@@ -1,5 +1,5 @@
 {
- "updated": "12/10/2026 15:24",
+ "updated": "13/10/2026 07:08",
  "items": [
   {
    "d": "2026-10-09",
@@ -245,11 +245,23 @@
    "d": "2026-10-10",
    "t": "20:45",
    "L": "Ligue 1",
-   "h": "Monaco",
-   "a": "Toulouse",
+   "h": "Brest",
+   "a": "Angers SCO",
    "s": [
-    2,
-    2
+    5,
+    1
+   ],
+   "f": 1
+  },
+  {
+   "d": "2026-10-10",
+   "t": "20:45",
+   "L": "Ligue 1",
+   "h": "Paris SG",
+   "a": "Le Mans",
+   "s": [
+    3,
+    1
    ],
    "f": 1
   },
@@ -281,23 +293,11 @@
    "d": "2026-10-10",
    "t": "20:45",
    "L": "Ligue 1",
-   "h": "Brest",
-   "a": "Angers SCO",
+   "h": "Monaco",
+   "a": "Toulouse",
    "s": [
-    5,
-    1
-   ],
-   "f": 1
-  },
-  {
-   "d": "2026-10-10",
-   "t": "20:45",
-   "L": "Ligue 1",
-   "h": "Paris SG",
-   "a": "Le Mans",
-   "s": [
-    3,
-    1
+    2,
+    2
    ],
    "f": 1
   },
@@ -340,11 +340,11 @@
   {
    "d": "2026-10-11",
    "t": "15:00",
-   "L": "Premier League",
-   "h": "Crystal Palace",
-   "a": "Nott'm Forest",
+   "L": "Ligue 1",
+   "h": "Nice",
+   "a": "Strasbourg",
    "s": [
-    3,
+    2,
     1
    ],
    "f": 1
@@ -352,9 +352,9 @@
   {
    "d": "2026-10-11",
    "t": "15:00",
-   "L": "Serie A",
-   "h": "Lazio",
-   "a": "Monza",
+   "L": "Premier League",
+   "h": "Crystal Palace",
+   "a": "Nott'm Forest",
    "s": [
     3,
     1
@@ -377,23 +377,23 @@
    "d": "2026-10-11",
    "t": "15:00",
    "L": "Serie A",
-   "h": "Lecce",
-   "a": "Bologna",
+   "h": "Lazio",
+   "a": "Monza",
    "s": [
-    1,
-    2
+    3,
+    1
    ],
    "f": 1
   },
   {
    "d": "2026-10-11",
    "t": "15:00",
-   "L": "Ligue 1",
-   "h": "Nice",
-   "a": "Strasbourg",
+   "L": "Serie A",
+   "h": "Lecce",
+   "a": "Bologna",
    "s": [
-    2,
-    1
+    1,
+    2
    ],
    "f": 1
   },
@@ -484,24 +484,24 @@
   {
    "d": "2026-10-11",
    "t": "20:45",
-   "L": "Ligue 1",
-   "h": "Troyes",
-   "a": "Marseille",
-   "s": [
-    0,
-    2
-   ],
-   "f": 1
-  },
-  {
-   "d": "2026-10-11",
-   "t": "20:45",
    "L": "Serie A",
    "h": "Cagliari",
    "a": "Juventus",
    "s": [
     1,
     1
+   ],
+   "f": 1
+  },
+  {
+   "d": "2026-10-11",
+   "t": "20:45",
+   "L": "Ligue 1",
+   "h": "Troyes",
+   "a": "Marseille",
+   "s": [
+    0,
+    2
    ],
    "f": 1
   },
@@ -522,28 +522,48 @@
    "t": "18:30",
    "L": "Serie A",
    "h": "Atalanta",
-   "a": "Venezia"
+   "a": "Venezia",
+   "s": [
+    3,
+    1
+   ],
+   "f": 1
   },
   {
    "d": "2026-10-12",
    "t": "20:45",
    "L": "Serie A",
    "h": "Torino",
-   "a": "Udinese"
-  },
-  {
-   "d": "2026-10-12",
-   "t": "21:00",
-   "L": "La Liga",
-   "h": "Levante",
-   "a": "Sevilla"
+   "a": "Udinese",
+   "s": [
+    2,
+    1
+   ],
+   "f": 1
   },
   {
    "d": "2026-10-12",
    "t": "21:00",
    "L": "Premier League",
    "h": "Coventry",
-   "a": "Newcastle"
+   "a": "Newcastle",
+   "s": [
+    4,
+    1
+   ],
+   "f": 1
+  },
+  {
+   "d": "2026-10-12",
+   "t": "21:00",
+   "L": "La Liga",
+   "h": "Levante",
+   "a": "Sevilla",
+   "s": [
+    3,
+    3
+   ],
+   "f": 1
   },
   {
    "d": "2026-10-13",
@@ -551,14 +571,6 @@
    "L": "Ligue 1",
    "h": "Lens",
    "a": "Sporting CP",
-   "C": "Ligue des champions"
-  },
-  {
-   "d": "2026-10-13",
-   "t": "21:00",
-   "L": "Bundesliga",
-   "h": "RB Leipzig",
-   "a": "PSV",
    "C": "Ligue des champions"
   },
   {
@@ -575,6 +587,14 @@
    "L": "Premier League",
    "h": "Arsenal",
    "a": "Lille",
+   "C": "Ligue des champions"
+  },
+  {
+   "d": "2026-10-13",
+   "t": "21:00",
+   "L": "Bundesliga",
+   "h": "RB Leipzig",
+   "a": "PSV",
    "C": "Ligue des champions"
   },
   {
@@ -629,14 +649,6 @@
    "d": "2026-10-14",
    "t": "21:00",
    "L": "Bundesliga",
-   "h": "Sl. Bratislava",
-   "a": "Stuttgart",
-   "C": "Ligue des champions"
-  },
-  {
-   "d": "2026-10-14",
-   "t": "21:00",
-   "L": "Bundesliga",
    "h": "Bodø/Glimt",
    "a": "Dortmund",
    "C": "Ligue des champions"
@@ -660,9 +672,9 @@
   {
    "d": "2026-10-14",
    "t": "21:00",
-   "L": "Premier League",
-   "h": "Man City",
-   "a": "Paris SG",
+   "L": "Bundesliga",
+   "h": "Sl. Bratislava",
+   "a": "Stuttgart",
    "C": "Ligue des champions"
   },
   {
@@ -671,6 +683,14 @@
    "L": "Premier League",
    "h": "Aston Villa",
    "a": "Fenerbahçe",
+   "C": "Ligue des champions"
+  },
+  {
+   "d": "2026-10-14",
+   "t": "21:00",
+   "L": "Premier League",
+   "h": "Man City",
+   "a": "Paris SG",
    "C": "Ligue des champions"
   },
   {
@@ -702,137 +722,179 @@
    "a": "Levante"
   },
   {
-   "d": "2026-10-18",
-   "t": "12:30",
-   "L": "Serie A",
-   "h": "Udinese",
-   "a": "Lecce"
+   "d": "2026-10-17",
+   "t": "13:30",
+   "L": "Premier League",
+   "h": "Everton",
+   "a": "Chelsea"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "14:00",
    "L": "La Liga",
-   "h": "Osasuna",
-   "a": "Santander"
+   "h": "Espanol",
+   "a": "Ath Madrid"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "15:00",
    "L": "Serie A",
-   "h": "Fiorentina",
-   "a": "Como"
+   "h": "Venezia",
+   "a": "Napoli"
   },
   {
-   "d": "2026-10-18",
-   "t": "15:00",
-   "L": "Premier League",
-   "h": "Bournemouth",
-   "a": "Sunderland"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "15:00",
-   "L": "Ligue 1",
-   "h": "Angers SCO",
-   "a": "Marseille"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "15:00",
-   "L": "Premier League",
-   "h": "Leeds",
-   "a": "Man United"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "15:00",
-   "L": "Premier League",
-   "h": "Brighton",
-   "a": "Crystal Palace"
-  },
-  {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "15:30",
    "L": "Bundesliga",
-   "h": "Leverkusen",
-   "a": "Freiburg"
+   "h": "Union Berlin",
+   "a": "Dortmund"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
+   "t": "15:30",
+   "L": "Bundesliga",
+   "h": "Schalke 04",
+   "a": "Mainz"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "15:30",
+   "L": "Bundesliga",
+   "h": "Werder Bremen",
+   "a": "Paderborn"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "15:30",
+   "L": "Bundesliga",
+   "h": "Hamburg",
+   "a": "Stuttgart"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "15:30",
+   "L": "Bundesliga",
+   "h": "Elversberg",
+   "a": "Augsburg"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "16:00",
+   "L": "Premier League",
+   "h": "Brentford",
+   "a": "Liverpool"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "16:00",
+   "L": "Premier League",
+   "h": "Fulham",
+   "a": "Hull"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "16:00",
+   "L": "Premier League",
+   "h": "Man City",
+   "a": "Ipswich"
+  },
+  {
+   "d": "2026-10-17",
    "t": "16:15",
    "L": "La Liga",
-   "h": "Celta",
-   "a": "Alaves"
+   "h": "Villarreal",
+   "a": "Elche"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "17:15",
    "L": "Ligue 1",
-   "h": "Le Havre",
-   "a": "Auxerre"
+   "h": "Strasbourg",
+   "a": "Paris SG"
   },
   {
-   "d": "2026-10-18",
-   "t": "17:15",
-   "L": "Ligue 1",
-   "h": "Lorient",
-   "a": "Monaco"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "17:15",
-   "L": "Ligue 1",
-   "h": "Paris FC",
-   "a": "Rennes"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "17:30",
-   "L": "Premier League",
-   "h": "Nott'm Forest",
-   "a": "Arsenal"
-  },
-  {
-   "d": "2026-10-18",
-   "t": "17:30",
-   "L": "Bundesliga",
-   "h": "M'gladbach",
-   "a": "Hoffenheim"
-  },
-  {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "18:00",
    "L": "Serie A",
-   "h": "Milan",
-   "a": "Atalanta"
+   "h": "Bologna",
+   "a": "Inter"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
+   "t": "18:30",
+   "L": "Bundesliga",
+   "h": "Bayern Munich",
+   "a": "RB Leipzig"
+  },
+  {
+   "d": "2026-10-17",
+   "t": "18:30",
+   "L": "Premier League",
+   "h": "Newcastle",
+   "a": "Aston Villa"
+  },
+  {
+   "d": "2026-10-17",
    "t": "18:30",
    "L": "La Liga",
-   "h": "Malaga",
-   "a": "Sociedad"
+   "h": "Betis",
+   "a": "Barcelona"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "20:45",
    "L": "Ligue 1",
-   "h": "Lyon",
-   "a": "Nice"
+   "h": "Troyes",
+   "a": "Lens"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
    "t": "20:45",
    "L": "Serie A",
-   "h": "Juventus",
-   "a": "Lazio"
+   "h": "Roma",
+   "a": "Genoa"
   },
   {
-   "d": "2026-10-18",
+   "d": "2026-10-17",
+   "t": "20:45",
+   "L": "Ligue 1",
+   "h": "Lille",
+   "a": "Brest"
+  },
+  {
+   "d": "2026-10-17",
    "t": "21:00",
    "L": "La Liga",
-   "h": "Real Madrid",
-   "a": "Sevilla"
+   "h": "Valencia",
+   "a": "Ath Bilbao"
+  },
+  {
+   "d": "2026-10-19",
+   "t": "18:30",
+   "L": "Serie A",
+   "h": "Monza",
+   "a": "Cagliari"
+  },
+  {
+   "d": "2026-10-19",
+   "t": "20:45",
+   "L": "Serie A",
+   "h": "Parma",
+   "a": "Torino"
+  },
+  {
+   "d": "2026-10-19",
+   "t": "21:00",
+   "L": "Premier League",
+   "h": "Tottenham",
+   "a": "Coventry"
+  },
+  {
+   "d": "2026-10-19",
+   "t": "21:00",
+   "L": "La Liga",
+   "h": "Getafe",
+   "a": "Vallecano"
   }
  ]
 }
