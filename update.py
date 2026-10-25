@@ -2,6 +2,7 @@
 """Mise à jour automatique, lancée chaque jour par GitHub Actions :
  - matchs à venir (API football-data.org, clé gratuite) -> fixtures.json
  - résultats des 5 championnats (football-data.co.uk)   -> data/*.csv
+ - saisons passées (confrontations directes)            -> data/hist.json
 """
 import difflib, json, os, re, sys, unicodedata, urllib.request
 from datetime import date, datetime, timedelta
@@ -145,6 +146,59 @@ def csv_resultats():
             print("CSV", c, "non mis à jour :", e)
 
 
+SAISONS_ARRIERE = 15  # nombre de saisons passées gardées pour l'historique des confrontations
+
+
+def historique():
+    """Saisons passées (football-data.co.uk) -> data/hist.json, pour les confrontations directes.
+    Une saison terminée ne change plus : on ne télécharge que celles qui manquent."""
+    import csv, io
+    aujourdhui = date.today()
+    y = aujourdhui.year if aujourdhui.month >= 7 else aujourdhui.year - 1  # saison en cours (déjà dans data/*.csv)
+    voulues = ["%02d%02d" % ((a % 100), ((a + 1) % 100)) for a in range(y - SAISONS_ARRIERE, y)]
+    fichier = "data/hist.json"
+    try:
+        hist = json.load(open(fichier, encoding="utf-8"))
+    except Exception:
+        hist = {"seasons": [], "rows": []}
+    deja = set(hist.get("seasons", []))
+    rows = hist.get("rows", [])
+    nouveau = False
+    for saison in voulues:
+        for c in CSV:
+            cle = saison + "/" + c
+            if cle in deja:
+                continue
+            try:
+                brut = get("https://www.football-data.co.uk/mmz4281/%s/%s.csv" % (saison, c))
+            except Exception as e:
+                if "404" in str(e):
+                    deja.add(cle)  # la saison n'existe pas pour ce championnat : inutile de réessayer
+                else:
+                    print("Historique", cle, "non téléchargé :", e)
+                continue
+            try:
+                texte = brut.decode("utf-8-sig")
+            except UnicodeDecodeError:
+                texte = brut.decode("latin-1")
+            for r in csv.DictReader(io.StringIO(texte)):
+                h, a, hg, ag, dt = (r.get("HomeTeam") or "").strip(), (r.get("AwayTeam") or "").strip(), \
+                    r.get("FTHG", ""), r.get("FTAG", ""), (r.get("Date") or "").strip()
+                m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{2,4})$", dt)
+                if not (h and a and m and hg.isdigit() and ag.isdigit()):
+                    continue
+                an = int(m.group(3))
+                an += 2000 if an < 100 and an < 70 else (1900 if an < 100 else 0)
+                rows.append([h, a, int(hg), int(ag), "%04d-%02d-%02d" % (an, int(m.group(2)), int(m.group(1)))])
+            deja.add(cle)
+            nouveau = True
+    if nouveau or not os.path.exists(fichier):
+        rows.sort(key=lambda r: r[4])
+        json.dump({"seasons": sorted(deja), "rows": rows}, open(fichier, "w", encoding="utf-8"),
+                  ensure_ascii=False, separators=(",", ":"))
+        print(len(rows), "matchs d'historique dans", fichier)
+
+
 if __name__ == "__main__":
     token = os.environ.get("FOOTBALL_DATA_TOKEN")
     if not token:
@@ -154,3 +208,4 @@ if __name__ == "__main__":
               open("fixtures.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(len(items), "matchs écrits dans fixtures.json")
     csv_resultats()
+    historique()
