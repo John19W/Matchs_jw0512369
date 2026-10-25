@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8">
+<html lang="fr" data-pal="cyan"><head><meta name="robots" content="noindex, nofollow"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Matchs du jour — Stats</title>
+<script>try{var _p=localStorage.getItem("pal");if(/^(cyan|violet|vert)$/.test(_p))document.documentElement.setAttribute("data-pal",_p)}catch(e){}</script>
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f5f6f8;--card:#fff;--tx:#14181f;--mut:#6b7280;--bd:#e3e6ea;--ac:#0b8f5b;--w:#0b8f5b;--d:#9aa1ab;--l:#d64545;--h:#2f6fed;--a:#e08a1e}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1318;--card:#181e26;--tx:#e8ebef;--mut:#8b94a1;--bd:#262e39;--ac:#2fd08a;--w:#2fd08a;--d:#6b7380;--l:#f06a6a;--h:#6b9bff;--a:#f0a64a}}
@@ -59,9 +60,57 @@ main{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:14px;p
 .tt td:nth-child(2){text-align:left;white-space:nowrap}.tt td,.tt th{white-space:nowrap}.evt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}.evt button{border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:999px;padding:5px 11px;font:inherit;font-size:12.5px;cursor:pointer}.evt button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
 .evg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}.ev{position:relative;border:1px solid var(--bd);border-radius:10px;padding:10px 10px 14px;background:var(--bg);overflow:hidden}.ev b{font-size:20px}.ev .evl{font-size:13px}.ev small{display:block;color:var(--mut);font-size:11.5px;margin-top:2px}.ev i{position:absolute;left:0;right:0;bottom:0;height:5px}
 .h2l{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px}.h2c{flex:none;min-width:150px;border:1px solid var(--bd);border-radius:10px;padding:8px 10px;font-size:13px;background:var(--bg)}.h2c div{display:flex;justify-content:space-between;gap:10px}.h2c .d{font-size:11.5px;color:var(--mut);margin-bottom:4px}.h2c .w{font-weight:700}
-.mx td{padding:4px 6px;font-size:12px;text-align:center;line-height:1.25}.mx th{font-size:11px;white-space:nowrap}.mx small{color:var(--mut);font-size:10.5px}details.sec{border-top:1px solid var(--bd);margin-top:10px}details.sec>summary{cursor:pointer;font-size:13px;font-weight:600;padding:10px 0;color:var(--tx)}details.sec[open]>summary{color:var(--ac)}</style></head><body>
+.mx td{padding:4px 6px;font-size:12px;text-align:center;line-height:1.25}.mx th{font-size:11px;white-space:nowrap}.mx small{color:var(--mut);font-size:10.5px}details.sec{border-top:1px solid var(--bd);margin-top:10px}details.sec>summary{cursor:pointer;font-size:13px;font-weight:600;padding:10px 0;color:var(--tx)}details.sec[open]>summary{color:var(--ac)}
+/* ===== Thème sombre futuriste (3 palettes) ===== */
+:root[data-pal]{color-scheme:dark;--bg:#060a13;--card:rgba(12,19,35,.8);--tx:#e6f1ff;--mut:#7f93b2;--bd:rgba(120,160,220,.17);--w:#22f59b;--d:#5a6b88;--l:#ff4d6d;--mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,monospace}
+:root[data-pal="cyan"]{--ac:#00e5ff;--acrgb:0,229,255;--h:#0899d6;--a:#ff3df2}
+:root[data-pal="violet"]{--ac:#a77bff;--acrgb:167,123,255;--h:#7a5cf0;--a:#ff5ec8}
+:root[data-pal="vert"]{--ac:#3dff9a;--acrgb:61,255,154;--h:#0fb88f;--a:#e69500}
+body{background:radial-gradient(900px 500px at 12% -8%,rgba(var(--acrgb),.14),transparent 60%),radial-gradient(800px 500px at 100% 0,rgba(var(--acrgb),.07),transparent 55%),linear-gradient(rgba(var(--acrgb),.045) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(90deg,rgba(var(--acrgb),.045) 1px,transparent 1px) 0 0/36px 36px,var(--bg);background-attachment:fixed;letter-spacing:.01em}
+h1{font-size:21px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);text-shadow:0 0 14px rgba(var(--acrgb),.6)}
+h1 span{color:var(--ac)}
+.pal{display:flex;gap:10px;align-items:center;margin-top:8px;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.12em}
+.pal button{width:24px;height:24px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;opacity:.7;transition:.2s}
+.pal button:hover{opacity:1}.pal button.on{opacity:1;border-color:#fff;box-shadow:0 0 12px rgba(var(--acrgb),.8)}
+.panel,#det,.m,.tile,.ev,.vb,.h2c,.btn,.tabs button,.evt button,.ctl select,.ctl input,.dl input{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.panel,#det{background:var(--card);border:1px solid rgba(var(--acrgb),.22);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 8px 32px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.04)}
+.m{background:var(--card);border:1px solid var(--bd);border-left:3px solid rgba(var(--acrgb),.55);transition:.18s}
+.m:hover{border-color:rgba(var(--acrgb),.5);transform:translateX(2px)}
+.m.sel{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac),0 0 22px rgba(var(--acrgb),.32)}
+.tile,.ev,.vb,.h2c{background:rgba(255,255,255,.035);border:1px solid var(--bd)}
+.tile{border-radius:10px}
+.tile b,.ev b,.vb .big,.v,.pn,.t,.row .v,.h2c b,.mt td,.tbl td{font-family:var(--mono)}
+.tile b,.ev b,.vb .big{color:var(--ac);text-shadow:0 0 12px rgba(var(--acrgb),.5)}
+.sec h3,.lg{color:var(--ac);letter-spacing:.16em;text-shadow:0 0 8px rgba(var(--acrgb),.35)}
+.sec h3::before{content:"▍";margin-right:6px;color:var(--ac)}
+details.sec{border-top:1px solid rgba(var(--acrgb),.18)}
+details.sec>summary{letter-spacing:.04em;list-style:none}details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::before{content:"▸";display:inline-block;margin-right:8px;color:var(--ac);transition:transform .2s}
+details.sec[open]>summary::before{transform:rotate(90deg)}
+details.sec[open]>summary{color:var(--ac);text-shadow:0 0 8px rgba(var(--acrgb),.4)}
+.tabs button,.evt button,.btn{background:rgba(255,255,255,.04);border:1px solid var(--bd);transition:.18s}
+.tabs button:hover,.evt button:hover,.btn:hover{border-color:var(--ac);box-shadow:0 0 10px rgba(var(--acrgb),.3)}
+.tabs button.on,.evt button.on{background:var(--ac);color:#031018;border-color:var(--ac);font-weight:700;box-shadow:0 0 16px rgba(var(--acrgb),.55)}
+.ctl select,.ctl input,.dl input{background:rgba(255,255,255,.05);border:1px solid var(--bd);color:var(--tx)}
+.ctl select:focus,.ctl input:focus,.dl input:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 2px rgba(var(--acrgb),.25)}
+.pb i,.bar i,.ev i{box-shadow:0 0 8px currentColor}
+.pb,.bar{background:rgba(255,255,255,.06)}.pp{box-shadow:0 0 14px rgba(var(--acrgb),.18)}.pp span{text-shadow:0 1px 3px rgba(0,0,0,.65)}
+.ev i{height:3px;opacity:.9}
+.live{animation:blink 1.1s infinite;text-shadow:0 0 8px var(--l)}@keyframes blink{50%{opacity:.35}}
+.pos{text-shadow:0 0 8px rgba(34,245,155,.5)}.neg{text-shadow:0 0 8px rgba(255,77,109,.4)}
+.sub,.note{color:var(--mut)}
+.panel a,.panel summary{color:var(--ac)}
+.mt th{color:var(--mut);letter-spacing:.08em;text-transform:uppercase;font-size:10.5px}
+.row{border-bottom:1px solid var(--bd)}
+.hd b{letter-spacing:.04em}
+.fm s{box-shadow:0 0 8px rgba(0,0,0,.5)}
+::-webkit-scrollbar{height:8px;width:8px}::-webkit-scrollbar-thumb{background:rgba(var(--acrgb),.35);border-radius:6px}::-webkit-scrollbar-track{background:transparent}
+::selection{background:rgba(var(--acrgb),.4)}
+@media(prefers-reduced-motion:reduce){.live{animation:none}.m,.tabs button{transition:none}}
+</style></head><body>
 <header><h1>⚽ Matchs du jour — <span id="dtl"></span></h1>
-<div class="sub">Ligue 1 · Premier League · La Liga · Serie A · Bundesliga — heures de Paris. Données football-data.co.uk (5 derniers matchs). Clique un match pour ouvrir ses stats.</div></header>
+<div class="sub">Ligue 1 · Premier League · La Liga · Serie A · Bundesliga — heures de Paris. Données football-data.co.uk (5 derniers matchs). Clique un match pour ouvrir ses stats.</div>
+<div class="pal" id="pal">Thème <button type="button" data-p="cyan" title="Cyan néon" style="background:linear-gradient(135deg,#00e5ff,#ff3df2)"></button><button type="button" data-p="violet" title="Violet" style="background:linear-gradient(135deg,#a77bff,#ff5ec8)"></button><button type="button" data-p="vert" title="Vert matrix" style="background:linear-gradient(135deg,#3dff9a,#e69500)"></button></div></header>
 <div class="panel" id="panel"><div class="ph"><b>Données</b> <span id="meta" class="sub"></span></div>
 <div class="pr"><label class="btn">Charger des CSV<input id="fi" type="file" accept=".csv,text/csv" multiple hidden></label><label class="dl">Jour <input id="dt" type="date"></label><button class="btn" id="rs" type="button">Réinitialiser</button></div>
 <div class="sub" id="msg">Glisse tes CSV ici ou clique « Charger des CSV ».</div>
@@ -171,14 +220,18 @@ $("#cres").innerHTML=`<div class="sub">Moyenne utilisée : ${mt}${q?` · marge d
 function setM(){const k=ST.mk,c=XM[k];$("#cl").value="";$("#cln").value=c.def();$("#cm").value="";const ck=$("#cmk");if(ck)ck.textContent=c.n;mkt();calc()}
 function bands(k){const c=MK[k],P=muOf(k),mu=P.mu,[a,b,d]=c.tri,pS=100*(1-pO(c.kind,mu,a)),pG=100*pO(c.kind,mu,d),pM=100-pS-pG,f=Math.floor,pl=l=>Math.round(100*pO(c.kind,mu,l));
 return`<div class="bd"><div class="bn">${c.n.replace(" du match","")} <small>moy. ${mu.toFixed(1)}</small></div><div class="pp"><span style="width:${pS}%;background:var(--h)">${Math.round(pS)}%</span><span style="width:${pM}%;background:var(--d)">${Math.round(pM)}%</span><span style="width:${pG}%;background:var(--a)">${Math.round(pG)}%</span></div><div class="bl"><span>Petit ≤ ${f(a)}</span><span>Moyen ${f(a)+1}–${f(d)}</span><span>Gros ≥ ${f(d)+1}</span></div><div class="sub">+${a} : ${pl(a)} % · +${b} : ${pl(b)} % · +${d} : ${pl(d)} %</div></div>`}
+function allS(L,t,i){if(i==null)return Object.values(D).flatMap(q=>q.r).filter(r=>r[0]===t||r[1]===t).map(r=>r[0]===t?{o:r[2],c:r[3]}:{o:r[3],c:r[2]});const a=[];S.forEach(s=>{if(s[0]===t)a.push({o:sh1(s[2][i],i),c:sh1(s[3][i],i)});else if(s[1]===t)a.push({o:sh1(s[3][i],i),c:sh1(s[2][i],i)})});return a}
+function concHtml(L,m,A,B){const T=t=>{const q={};[["g",null],["sh",1],["so",2],["co",3],["ca",4]].forEach(([k,i])=>{const a=allS(L,t,i);q[k]={n:a.length,c:avg(a,"c")}});return q},X=T(m.h),Y=T(m.a);
+const row=(lab,k,key,fmt,max)=>{const side=(q,l5,col,ml)=>`<div><span class="v">${q[k].c==null?"—":fmt(q[k].c)}</span> <small style="color:var(--mut)">(5 d. : ${l5==null?"—":fmt(l5)})</small><div class="bar"><i style="width:${q[k].c==null?0:Math.min(100,100*q[k].c/max)}%;background:${col};${ml?"margin-left:auto":""}"></i></div></div>`;return`<div class="row">${side(X,A[key],"var(--h)",1)}<div class="k">${lab}</div>${side(Y,B[key],"var(--a)",0)}</div>`};
+return`<div class="sec"><h3>Concédés par match — saison (${X.g.n} / ${Y.g.n} matchs)</h3><div class="sub" style="margin-bottom:6px">Moyenne sur tous les matchs de la saison dans les CSV, avec les 5 derniers matchs entre parenthèses. « Cartons » = ceux reçus par les adversaires.</div>${row("Buts concédés","g","ga",f2,3)}${row("Tirs concédés","sh","shc",f1,25)}${row("Tirs cadrés concédés","so","soc",f1,10)}${row("Corners concédés","co","coc",f1,10)}${row("Cartons concédés (adverses)","ca","cac",f1,6)}</div>`}
 function teamTbl(L,t){const rs=res(L,t),ss=S.filter(s=>(s[0]===t||s[1]===t)).slice(-5),H=`<div class="sec"><h3>${t} — 5 derniers matchs (pour – contre)</h3>`;
 if(!rs.length||rs.length!==ss.length)return H+'<div class="sub">Pas de détail disponible pour cette équipe.</div></div>';
 const ix=[1,2,3,4,5,0],O=[],C=[];
 const rows=rs.map((x,k)=>{const s=ss[k],me=s[0]===t,o=(me?s[2]:s[3]).map(sh1),c=(me?s[3]:s[2]).map(sh1);O.push(o);C.push(c);const dd=x.d?x.d.slice(8)+"/"+x.d.slice(5,7):"—";return`<tr><td>${dd}</td><td>${x.home?"D":"E"} ${x.o}</td><td><span class="${x.r}" style="color:#fff;border-radius:4px;padding:1px 6px">${x.gf}-${x.ga}</span></td>${ix.map(i=>`<td>${i===0?o[0].toFixed(1)+"–"+c[0].toFixed(1):o[i]+"–"+c[i]}</td>`).join("")}</tr>`}).join("");
 const av=z=>ix.map(i=>(z.reduce((q,y)=>q+y[i],0)/z.length).toFixed(1)),ao=av(O),ac=av(C);
 return H+`<div style="overflow-x:auto"><table class="mt tt"><tr><th>Date</th><th>Adv.</th><th>Score</th><th>Tirs</th><th>Cadrés</th><th>Corners</th><th>Cartons</th><th>Fautes</th><th>xG</th></tr>${rows}<tr><td colspan="3"><b>Moyenne</b></td>${ao.map((v,k)=>`<td><b>${v}–${ac[k]}</b></td>`).join("")}</tr></table></div></div>`}
-const TL={shots:{n:"tirs",i:1,k:"n",lines:[8.5,10.5,12.5,14.5]},sot:{n:"tirs cadrés",i:2,k:"p",lines:[2.5,3.5,4.5,5.5]},corners:{n:"corners",i:3,k:"p",lines:[3.5,4.5,5.5,6.5]},cards:{n:"cartons",i:4,k:"p",lines:[0.5,1.5,2.5]}};
-function teamEv(m){const E=[];for(const k in TL){const c=TL[k],P=proj(CM.L,m.h,m.a,c.i);[[m.h,P.lh],[m.a,P.la]].forEach(([t,mu])=>{const a=samp(CM.L,t,c.i).map(x=>x.o);c.lines.forEach(l=>{const hit=a.filter(x=>x>l).length;E.push({c:t,l:`${t} : plus de ${l} ${c.n}`,p:100*pO(c.k,mu,l),s:a.length?`observé ${hit} / ${a.length} matchs`:"pas d'historique"})})})}return E}
+const TL={goals:{n:"buts",i:null,k:"p",lines:[0.5,1.5,2.5,3.5]},shots:{n:"tirs",i:1,k:"n",lines:[8.5,10.5,12.5,14.5]},sot:{n:"tirs cadrés",i:2,k:"p",lines:[2.5,3.5,4.5,5.5]},corners:{n:"corners",i:3,k:"p",lines:[3.5,4.5,5.5,6.5]},cards:{n:"cartons",i:4,k:"p",lines:[0.5,1.5,2.5,3.5]}};
+function teamEv(m){const E=[];for(const k in TL){const c=TL[k],P=proj(CM.L,m.h,m.a,c.i);[[m.h,P.lh,P.la],[m.a,P.la,P.lh]].forEach(([t,mu,mc])=>{const sm=samp(CM.L,t,c.i),a=sm.map(x=>x.o),b=sm.map(x=>x.c);c.lines.forEach(l=>{const hit=a.filter(x=>x>l).length,hc=b.filter(x=>x>l).length;E.push({c:t,l:`${t} : plus de ${l} ${c.n}`,p:100*pO(c.k,mu,l),s:a.length?`observé ${hit} / ${a.length} matchs`:"pas d'historique"});E.push({c:"Concédés",l:c.n==="cartons"?`${t} : adversaire plus de ${l} cartons`:`${t} concède plus de ${l} ${c.n}`,p:100*pO(c.k,mc,l),s:b.length?`concédé ${hc} / ${b.length} matchs`:"pas d'historique"})})})}return E}
 let EV=[],EC="Top",CATS=["Top"];
 function events(m,g,pr,A,B,has){const E=[],gs=[...A.g,...B.g],ob=(a,f)=>{const k=a.filter(f).length;return a.length?`observé ${k} / ${a.length} matchs`:"pas d'historique"};
 const tot=(k,l,lab,c)=>{const p=100*pO(MK[k].kind,muOf(k).mu,l),a=[...samT(CM.h,k),...samT(CM.a,k)];E.push({c,l:lab,p,s:ob(a,x=>x>l)})};
@@ -198,7 +251,7 @@ return E.concat(teamEv(m)).sort((a,b)=>b.p-a.p)}
 const evc=p=>p>=75?"#2fb35f":p>=60?"#9ccc3c":p>=45?"#f0a500":"#f2553d";
 function setEC(i){EC=CATS[i];evR()}
 function evR(){$("#evt").innerHTML=CATS.map((c,i)=>`<button class="${c===EC?"on":""}" onclick="setEC(${i})">${c==="Top"?"Les plus probables":c}</button>`).join("");
-const L=EC==="Top"?EV.filter(e=>e.p<=96).slice(0,12):EV.filter(e=>e.c===EC);
+const L=EC==="Top"?EV.filter(e=>e.p<=96&&e.c!=="Concédés").slice(0,12):EV.filter(e=>e.c===EC);
 $("#evg").innerHTML=L.map(e=>`<div class="ev"><div><b>${Math.round(e.p)} %</b> <span class="evl">${e.l}</span></div><small>${e.s}</small><i style="background:${evc(e.p)}"></i></div>`).join("")}
 const HH=[];
 function h2h(h,a,cut){const out=[],seen=new Set(),add=r=>{if(!((r[0]===h&&r[1]===a)||(r[0]===a&&r[1]===h)))return;if(cut&&r[4]>=cut)return;const k=r[4]+"|"+r[0]+"|"+r[1];if(seen.has(k))return;seen.add(k);out.push(r)};for(const L in D)D[L].r.forEach(add);HH.forEach(add);return out.sort((x,y)=>(y[4]||"").localeCompare(x[4]||""))}
@@ -212,9 +265,10 @@ const cards=H.slice(0,10).map(r=>{const dd=r[4]?r[4].slice(8)+"/"+r[4].slice(5,7
 return hd+`<div class="sub" style="margin-bottom:8px">${n} match(s) : ${m.h} ${wh} victoire(s) · ${n-wh-wa} nul(s) · ${m.a} ${wa} victoire(s) · ${(H.reduce((q,r)=>q+T(r),0)/n).toFixed(2)} buts / match</div><div class="evg">${t6(r=>T(r)>1,"Plus de 1,5")}${t6(r=>T(r)>2,"Plus de 2,5")}${t6(r=>T(r)>3,"Plus de 3,5")}${t6(bt,"BTTS")}${t6(r=>cc(m.h,r),"Clean sheet "+m.h)}${t6(r=>cc(m.a,r),"Clean sheet "+m.a)}</div><div class="h2l">${cards}</div></div>`}
 function predHtml(L,m,g){const r=D[L].r,n=r.length||1,lgG=r.reduce((q,x)=>q+x[2]+x[3],0)/n,lp=f=>Math.round(100*r.filter(f).length/n),pl=(k,l)=>Math.round(100*pO(MK[k].kind,muOf(k).mu,l))+" %",ln=i=>(2*base(L,i)).toFixed(1);
 const PP={};for(const k in TL)PP[k]=proj(L,m.h,m.a,TL[k].i);
-const ptm=(t,sd)=>`<div class="sub" style="margin:14px 0 6px"><b>${t}</b> — projection de l'équipe seule</div><div class="evg">`+[["shots",10.5],["sot",3.5],["corners",4.5],["cards",1.5]].map(([k,l])=>{const c=TL[k],mu=PP[k][sd],a=samp(L,t,c.i),o=a.length?a.reduce((q,x)=>q+x.o,0)/a.length:null,cv=a.length?a.reduce((q,x)=>q+x.c,0)/a.length:null;return tl(mu.toFixed(1),c.n,`Moy. ligue : ${base(L,c.i).toFixed(1)} · +${l} : ${Math.round(100*pO(c.k,mu,l))} %`+(o!=null?` · 5 derniers : ${o.toFixed(1)} (enc. ${cv.toFixed(1)})`:""),"var(--h)")}).join("")+"</div>";
+const pcs=(k,mu,lines)=>lines.map(l=>"+"+String(l).replace(".",",")+" : "+Math.round(100*pO(TL[k].k,mu,l))+" %").join(" · ");
+const ptm=(t,sd,sc)=>{const mk=(k,lines,conc)=>{const c=TL[k],mu=PP[k][conc?sc:sd],a=samp(L,t,c.i),o=a.length?avg(a,"o"):null,cv=a.length?avg(a,"c"):null,fm=v=>v.toFixed(k==="goals"?2:1),last=conc?cv:o,nom=conc?(k==="cards"?"cartons concédés (adverses)":c.n+" concédés"):c.n;return tl(fm(mu),nom,`Moy. ligue : ${fm(base(L,c.i))} · ${pcs(k,mu,lines)}`+(last!=null?` · 5 derniers : ${fm(last)}`:""),"var(--h)")},G=[.5,1.5,2.5,3.5];return `<div class="sub" style="margin:14px 0 6px"><b>${t}</b> — projection de l'équipe seule</div><div class="evg">`+[mk("goals",G),mk("shots",[10.5]),mk("sot",[3.5]),mk("corners",[4.5]),mk("cards",G)].join("")+`</div><div class="sub" style="margin:14px 0 6px"><b>${t}</b> — concédé par match (projection)</div><div class="evg">`+[mk("goals",G,1),mk("shots",[10.5],1),mk("sot",[3.5],1),mk("corners",[4.5],1),mk("cards",G,1)].join("")+"</div>"};
 const o25=100*pO("p",g.mu,2.5),o15=100*pO("p",g.mu,1.5),bt=100*(1-Math.exp(-g.lh))*(1-Math.exp(-g.la)),mu=k=>muOf(k).mu.toFixed(1),B="var(--h)";
-return '<div class="sec"><h3>Prédictions (total des 2 équipes, puis chaque équipe)</h3><div class="evg">'+[tl(Math.round(o25)+" %","Plus de 2,5 buts","Moy. ligue : "+lp(x=>x[2]+x[3]>2)+" %",evc(o25)),tl(Math.round(o15)+" %","Plus de 1,5 buts","Moy. ligue : "+lp(x=>x[2]+x[3]>1)+" %",evc(o15)),tl(Math.round(bt)+" %","BTTS","Moy. ligue : "+lp(x=>x[2]>0&&x[3]>0)+" %",evc(bt)),tl(g.mu.toFixed(1),"buts / match","Moy. ligue : "+lgG.toFixed(2),B),tl(mu("cards"),"cartons","Moy. ligue : "+ln(4)+" · +3,5 : "+pl("cards",3.5)+" · +4,5 : "+pl("cards",4.5),B),tl(mu("corners"),"corners","Moy. ligue : "+ln(3)+" · +8,5 : "+pl("corners",8.5)+" · +9,5 : "+pl("corners",9.5),B),tl(mu("shots"),"tirs","Moy. ligue : "+ln(1)+" · +24,5 : "+pl("shots",24.5),B),tl(mu("sot"),"tirs cadrés","Moy. ligue : "+ln(2)+" · +8,5 : "+pl("sot",8.5),B)].join("")+'</div>'+ptm(m.h,"lh")+ptm(m.a,"la")+'</div>'}
+return '<div class="sec"><h3>Prédictions (total des 2 équipes, puis chaque équipe)</h3><div class="evg">'+[tl(Math.round(o25)+" %","Plus de 2,5 buts","Moy. ligue : "+lp(x=>x[2]+x[3]>2)+" %",evc(o25)),tl(Math.round(o15)+" %","Plus de 1,5 buts","Moy. ligue : "+lp(x=>x[2]+x[3]>1)+" %",evc(o15)),tl(Math.round(bt)+" %","BTTS","Moy. ligue : "+lp(x=>x[2]>0&&x[3]>0)+" %",evc(bt)),tl(g.mu.toFixed(1),"buts / match","Moy. ligue : "+lgG.toFixed(2),B),tl(mu("cards"),"cartons","Moy. ligue : "+ln(4)+" · +3,5 : "+pl("cards",3.5)+" · +4,5 : "+pl("cards",4.5),B),tl(mu("corners"),"corners","Moy. ligue : "+ln(3)+" · +8,5 : "+pl("corners",8.5)+" · +9,5 : "+pl("corners",9.5),B),tl(mu("shots"),"tirs","Moy. ligue : "+ln(1)+" · +24,5 : "+pl("shots",24.5),B),tl(mu("sot"),"tirs cadrés","Moy. ligue : "+ln(2)+" · +8,5 : "+pl("sot",8.5),B)].join("")+'</div>'+ptm(m.h,"lh","la")+ptm(m.a,"la","lh")+'</div>'}
 function cbInit(){const k=$("#cbs").value||"shots",c=TLL[k],P=proj(CM.L,CM.h,CM.a,c.i);$("#cb1l").value=nr(c.lines,P.lh);$("#cb2l").value=nr(c.lines,P.la);$("#cbtl").value=Math.floor(P.mu)+.5;["cb1o","cb2o","cbo","cbto"].forEach(i=>$("#"+i).value="");cb()}
 function cb(){const k=$("#cbs").value||"shots",c=TLL[k],P=proj(CM.L,CM.h,CM.a,c.i),h=CM.h,a=CM.a,v=id=>parseFloat($("#"+id).value),s1=$("#cb1s").value||"o",s2=$("#cb2s").value||"o",l1=v("cb1l"),l2=v("cb2l");
 if(isNaN(l1)||isNaN(l2)){$("#cbres").innerHTML="";$("#cbmx").innerHTML="";return}
@@ -229,13 +283,13 @@ $("#cbres").innerHTML=`<div class="g2">${leg(h,s1,l1,p1)}${leg(a,s2,l2,p2)}</div
 let t=`<div style="overflow-x:auto;margin-top:10px"><table class="mt mx"><tr><th>${h} ↓ · ${a} →</th>`+c.lines.map(y=>`<th>${s2==="o"?"+":"−"}${y}</th>`).join("")+"</tr>";
 c.lines.forEach(x=>{t+=`<tr><td><b>${s1==="o"?"+":"−"}${x}</b></td>`+c.lines.map(y=>{const q=pr(P.lh,x,s1)*pr(P.la,y,s2);return`<td style="background:${evc(100*q)}33${x===l1&&y===l2?";outline:2px solid var(--ac)":""}">${Math.round(100*q)} %<br><small>${(1/q).toFixed(2)}</small></td>`}).join("")+"</tr>"});
 $("#cbmx").innerHTML=t+`</table></div><div class="sub">Chaque case : probabilité des deux conditions et cote juste.</div>`}
-function keepList(){const F={};EV.forEach(e=>{if(e.p<75||e.p>96)return;const o=/observé (\d+) \/ (\d+)/.exec(e.s);if(o&&+o[1]/+o[2]<0.6)return;const m=/plus de (\d+(?:\.\d+)?)/i.exec(e.l),ln=m?parseFloat(m[1]):null,key=m?e.l.replace(m[1],"#"):e.l;if(ln!=null&&ln<=0.5)return;if(!F[key]||(ln!=null&&ln>F[key].ln))F[key]={e,ln}});return Object.values(F).map(x=>x.e).sort((a,b)=>b.p-a.p).slice(0,5)}
+function keepList(){const F={};EV.forEach(e=>{if(e.p<75||e.p>96||e.c==="Concédés")return;const o=/observé (\d+) \/ (\d+)/.exec(e.s);if(o&&+o[1]/+o[2]<0.6)return;const m=/plus de (\d+(?:\.\d+)?)/i.exec(e.l),ln=m?parseFloat(m[1]):null,key=m?e.l.replace(m[1],"#"):e.l;if(ln!=null&&ln<=0.5)return;if(!F[key]||(ln!=null&&ln>F[key].ln))F[key]={e,ln}});return Object.values(F).map(x=>x.e).sort((a,b)=>b.p-a.p).slice(0,5)}
 function keepHtml(){const L=keepList();return `<div class="sec"><h3>À retenir : les plus probables, sans doublons</h3><div class="sub" style="margin-bottom:8px">Les 5 lignes les plus sûres (75 % ou plus), une seule par marché, quand l'observé suit.</div><div class="evg">${L.length?L.map(e=>`<div class="ev"><div><b>${Math.round(e.p)} %</b> <span class="evl">${e.l}</span></div><small>${e.s} · cote juste ${(100/e.p).toFixed(2)}</small><i style="background:${evc(e.p)}"></i></div>`).join(""):'<div class="sub">Rien d\'assez solide pour ce match.</div>'}</div></div>`}
 function fold(){if(!document.querySelectorAll)return;[...document.querySelectorAll("#det .sec")].forEach((s,i)=>{if(i<2)return;const h=s.querySelector("h3");if(!h)return;const d=document.createElement("details");d.className="sec";const m=document.createElement("summary");m.innerHTML=h.innerHTML;h.remove();d.appendChild(m);while(s.firstChild)d.appendChild(s.firstChild);s.replaceWith(d)})}
 function pick(i){const m0=all[i];unfreeze();if(m0.f){m0.e=S.find(q=>q[0]===m0.h&&q[1]===m0.a&&Math.abs(new Date(q[5])-new Date(m0.d))<=864e5)||null;freeze(m0.d)}sel=all[i];list();const m=sel,L=m.L;CM={L,h:m.h,a:m.a};ST={mk:"goals",sens:"o"};buildXM(m);
 const g=proj(L,m.h,m.a,null),sh=proj(L,m.h,m.a,1),co=proj(L,m.h,m.a,3),ca=proj(L,m.h,m.a,4),mod=p1x2(g.lh,g.la),has=m.p[0]!=null,pr=has?m.p:mod;
 const bt=100*(1-Math.exp(-g.lh))*(1-Math.exp(-g.la)),o25=100*pO("p",g.mu,2.5),A=cmp(L,m.h),B=cmp(L,m.a);
-EV=events(m,g,pr,A,B,has);EC="Top";CATS=["Top","Buts","Résultat","Corners","Cartons","Tirs",m.h,m.a];
+EV=events(m,g,pr,A,B,has);EC="Top";CATS=["Top","Buts","Résultat","Corners","Cartons","Tirs",m.h,m.a,"Concédés"];
 const R=(k,key,fmt,max)=>`<div class="row"><div><span class="v">${fmt(A[key])}</span><div class="bar"><i style="width:${A[key]==null?0:Math.min(100,100*A[key]/max)}%;background:var(--h);margin-left:auto"></i></div></div><div class="k">${k}</div><div><span class="v">${fmt(B[key])}</span><div class="bar"><i style="width:${B[key]==null?0:Math.min(100,100*B[key]/max)}%;background:var(--a)"></i></div></div></div>`;
 const tile=(v,l,s)=>`<div class="tile"><b>${v}</b><span>${l}</span>${s?`<small>${s}</small>`:""}</div>`;
 const opt=Object.keys(XM).map(k=>`<option value="${k}">${XM[k].n}</option>`).join("");
@@ -247,7 +301,7 @@ ${keepHtml()}<div class="sec"><h3>Ce qui a le plus de chances de se produire</h3
 ${predHtml(L,m,g)}${h2hHtml(m)}
 <div class="sec"><h3>Petit / moyen / gros : répartition du total</h3><div class="sub" style="margin-bottom:8px">Les 3 fourchettes font 100 % : chaque % est la probabilité que le total tombe dans la fourchette.</div>${Object.keys(MK).map(bands).join("")}</div>
 <div class="sec"><h3>Comparatif sur les 5 derniers matchs (${A.n} / ${B.n})</h3><div class="hd"><div>${form(A.g)}</div><span></span><div>${form(B.g)}</div></div>
-${R("Points par match","pts",f2,3)}${R("Buts marqués","gf",f2,4)}${R("Buts encaissés","ga",f2,4)}${R("xG","xg",f2,4)}${R("xG concédé","xgc",f2,4)}${R("Clean sheets","cs",pc,100)}${R("Sans marquer","fts",pc,100)}${R("Les deux marquent","bt",pc,100)}${R("Plus de 1,5 buts","o15",pc,100)}${R("Plus de 2,5 buts","o25",pc,100)}${R("Plus de 3,5 buts","o35",pc,100)}${R("Tirs","sh",f1,30)}${R("Tirs cadrés","so",f1,12)}${R("Tirs concédés","shc",f1,30)}${R("Tirs cadrés concédés","soc",f1,12)}${R("Corners","co",f1,12)}${R("Corners concédés","coc",f1,12)}${R("Cartons","ca",f1,6)}${R("Cartons adverses","cac",f1,6)}${R("Fautes","fo",f1,25)}</div>
+${R("Points par match","pts",f2,3)}${R("Buts marqués","gf",f2,4)}${R("Buts encaissés","ga",f2,4)}${R("xG","xg",f2,4)}${R("xG concédé","xgc",f2,4)}${R("Clean sheets","cs",pc,100)}${R("Sans marquer","fts",pc,100)}${R("Les deux marquent","bt",pc,100)}${R("Plus de 1,5 buts","o15",pc,100)}${R("Plus de 2,5 buts","o25",pc,100)}${R("Plus de 3,5 buts","o35",pc,100)}${R("Tirs","sh",f1,30)}${R("Tirs cadrés","so",f1,12)}${R("Tirs concédés","shc",f1,30)}${R("Tirs cadrés concédés","soc",f1,12)}${R("Corners","co",f1,12)}${R("Corners concédés","coc",f1,12)}${R("Cartons","ca",f1,6)}${R("Cartons concédés (adverses)","cac",f1,6)}${R("Fautes","fo",f1,25)}</div>${concHtml(L,m,A,B)}
 ${teamTbl(L,m.h)}${teamTbl(L,m.a)}<div class="sec"><h3>Pourcentages par marché</h3><div class="ctl"><label>Marché<select onchange="ST.mk=this.value;setM()">${opt}</select></label><label>Sens<select onchange="ST.sens=this.value;mkt()"><option value="o">Plus de</option><option value="u">Moins de</option></select></label><label>Ligne perso<input id="cl" type="number" step="0.5" oninput="mkt()"></label></div><div id="mkt"></div></div>
 <div class="sec"><h3>Calculateur de valeur — <span id="cmk"></span></h3><div class="ctl"><label>Ligne<input id="cln" type="number" step="0.5" oninput="calc()"></label><label>Moyenne (vide = auto)<input id="cm" type="number" step="0.1" oninput="calc()"></label><label>Cote plus de<input id="co" type="number" step="0.01" oninput="calc()"></label><label>Cote moins de<input id="cu" type="number" step="0.01" oninput="calc()"></label></div><div id="cres"></div></div>
 <div class="sec"><h3>Combiné personnalisé — équipe 1 + équipe 2</h3><div class="sub" style="margin-bottom:8px">Choisis une ligne pour chaque équipe (au lieu du total du book) : le modèle donne la probabilité que les deux conditions soient vraies ensemble.</div>
@@ -267,4 +321,5 @@ $("#fi").onchange=e=>{ingest([...e.target.files]);e.target.value=""};
 $("#dt").onchange=e=>{unfreeze();DAY=e.target.value;buildAll();list();$("#dtl").textContent=new Date(DAY+"T12:00:00").toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});$("#det").innerHTML='<div class="empty">Sélectionne un match à gauche.</div>'};
 $("#rs").onclick=resetData;
 const pn=$("#panel");["dragenter","dragover"].forEach(v=>pn.addEventListener(v,e=>{e.preventDefault();pn.classList.add("drag")}));["dragleave","drop"].forEach(v=>pn.addEventListener(v,e=>{e.preventDefault();pn.classList.remove("drag")}));pn.addEventListener("drop",e=>ingest([...e.dataTransfer.files]));
+(function(){const b=[...document.querySelectorAll("#pal button")],set=p=>{document.documentElement.setAttribute("data-pal",p);b.forEach(x=>x.classList.toggle("on",x.dataset.p===p));try{localStorage.setItem("pal",p)}catch(e){}};b.forEach(x=>x.onclick=()=>set(x.dataset.p));set(document.documentElement.getAttribute("data-pal")||"cyan")})();
 </script></body></html>
