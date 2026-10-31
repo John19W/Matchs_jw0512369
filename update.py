@@ -199,6 +199,60 @@ def historique():
         print(len(rows), "matchs d'historique dans", fichier)
 
 
+def historique_stats():
+    """Saisons passées -> data/hist_stats.json : tirs, tirs cadrés, corners et cartons de chaque match.
+    Sert uniquement à vérifier la fiabilité des pourcentages (l'outil ne charge pas ce fichier).
+    Une ligne : [dom, ext, date, tirs dom, tirs ext, cadrés dom, cadrés ext, corners dom, corners ext, cartons dom, cartons ext]."""
+    import csv, io
+    aujourdhui = date.today()
+    y = aujourdhui.year if aujourdhui.month >= 7 else aujourdhui.year - 1
+    voulues = ["%02d%02d" % ((a % 100), ((a + 1) % 100)) for a in range(y - SAISONS_ARRIERE, y)]
+    fichier = "data/hist_stats.json"
+    try:
+        hist = json.load(open(fichier, encoding="utf-8"))
+    except Exception:
+        hist = {"seasons": [], "rows": []}
+    deja = set(hist.get("seasons", []))
+    rows = hist.get("rows", [])
+    nouveau = False
+    ent = lambda v: int(v) if (v or "").strip().isdigit() else None
+    for saison in voulues:
+        for c in CSV:
+            cle = saison + "/" + c
+            if cle in deja:
+                continue
+            try:
+                brut = get("https://www.football-data.co.uk/mmz4281/%s/%s.csv" % (saison, c))
+            except Exception as e:
+                if "404" in str(e):
+                    deja.add(cle)
+                else:
+                    print("Stats", cle, "non téléchargé :", e)
+                continue
+            try:
+                texte = brut.decode("utf-8-sig")
+            except UnicodeDecodeError:
+                texte = brut.decode("latin-1")
+            for r in csv.DictReader(io.StringIO(texte)):
+                h, a, dt = (r.get("HomeTeam") or "").strip(), (r.get("AwayTeam") or "").strip(), (r.get("Date") or "").strip()
+                m = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{2,4})$", dt)
+                v = [ent(r.get(k)) for k in ("HS", "AS", "HST", "AST", "HC", "AC", "HY", "AY")]
+                if not (h and a and m) or any(x is None for x in v):
+                    continue
+                an = int(m.group(3))
+                an += 2000 if an < 100 and an < 70 else (1900 if an < 100 else 0)
+                rouges = (ent(r.get("HR")) or 0, ent(r.get("AR")) or 0)
+                rows.append([h, a, "%04d-%02d-%02d" % (an, int(m.group(2)), int(m.group(1))),
+                             v[0], v[1], v[2], v[3], v[4], v[5], v[6] + rouges[0], v[7] + rouges[1]])
+            deja.add(cle)
+            nouveau = True
+    if nouveau or not os.path.exists(fichier):
+        rows.sort(key=lambda r: r[2])
+        json.dump({"seasons": sorted(deja), "rows": rows}, open(fichier, "w", encoding="utf-8"),
+                  ensure_ascii=False, separators=(",", ":"))
+        print(len(rows), "matchs avec statistiques dans", fichier)
+
+
 if __name__ == "__main__":
     token = os.environ.get("FOOTBALL_DATA_TOKEN")
     if not token:
@@ -209,3 +263,7 @@ if __name__ == "__main__":
     print(len(items), "matchs écrits dans fixtures.json")
     csv_resultats()
     historique()
+    try:
+        historique_stats()
+    except Exception as e:  # cette étape est facultative : elle ne doit jamais bloquer la mise à jour
+        print("Statistiques passées non mises à jour :", e)
