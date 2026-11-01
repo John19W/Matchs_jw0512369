@@ -1,0 +1,3143 @@
+{
+ "generated": "2026-11-01T11:07:47.269709Z",
+ "steps": {
+  "bookmakers": {
+   "status": 200,
+   "total": 369,
+   "found": {
+    "bet365": [
+     "anybet365",
+     "bet365",
+     "bet365-nj",
+     "bet365.bet.ar",
+     "bet365.bet.br",
+     "bet365.de"
+    ],
+    "betclic": [],
+    "unibet": [
+     "fdj",
+     "unibet",
+     "unibet.be",
+     "unibet.com.au",
+     "unibet.dk",
+     "unibet.fr"
+    ],
+    "winamax": [
+     "winamax.de",
+     "winamax.es",
+     "winamax.fr"
+    ],
+    "betify": [
+     "betify"
+    ],
+    "celsius": [],
+    "pecbet": []
+   }
+  },
+  "markets": {
+   "status": 200,
+   "kept": [
+    {
+     "marketId": 10743,
+     "marketLength": 0,
+     "marketName": "Player Shots (incl. overtime)",
+     "playerProp": true,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "result",
+     "marketType": "players-shots",
+     "outcomes": [
+      {
+       "outcomeId": 10752,
+       "outcomeName": "9+"
+      },
+      {
+       "outcomeId": 10745,
+       "outcomeName": "2+"
+      },
+      {
+       "outcomeId": 10746,
+       "outcomeName": "3+"
+      },
+      {
+       "outcomeId": 10743,
+       "outcomeName": "0"
+      },
+      {
+       "outcomeId": 10744,
+       "outcomeName": "1+"
+      },
+      {
+       "outcomeId": 10747,
+       "outcomeName": "4+"
+      },
+      {
+       "outcomeId": 10750,
+       "outcomeName": "7+"
+      },
+      {
+       "outcomeId": 10751,
+       "outcomeName": "8+"
+      },
+      {
+       "outcomeId": 10748,
+       "outcomeName": "5+"
+      },
+      {
+       "outcomeId": 10749,
+       "outcomeName": "6+"
+      }
+     ]
+    },
+    {
+     "marketId": 10753,
+     "marketLength": 0,
+     "marketName": "Player Shots On Goal (incl. overtime)",
+     "playerProp": true,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "result",
+     "marketType": "players-shotsongoal",
+     "outcomes": [
+      {
+       "outcomeId": 10754,
+       "outcomeName": "1+"
+      },
+      {
+       "outcomeId": 10758,
+       "outcomeName": "5+"
+      },
+      {
+       "outcomeId": 10756,
+       "outcomeName": "3+"
+      },
+      {
+       "outcomeId": 10757,
+       "outcomeName": "4+"
+      },
+      {
+       "outcomeId": 10753,
+       "outcomeName": "0"
+      },
+      {
+       "outcomeId": 10759,
+       "outcomeName": "6+"
+      },
+      {
+       "outcomeId": 10760,
+       "outcomeName": "7+"
+      },
+      {
+       "outcomeId": 10755,
+       "outcomeName": "2+"
+      }
+     ]
+    },
+    {
+     "marketId": 10764,
+     "marketLength": 3,
+     "marketName": "Corners - 1X2",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "fulltime",
+     "marketType": "1x2-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10766,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10764,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10765,
+       "outcomeName": "X"
+      }
+     ]
+    },
+    {
+     "marketId": 10767,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10768,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10767,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10769,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10769,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10770,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10771,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10772,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10771,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10773,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10774,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10773,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10775,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10775,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10776,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10777,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10778,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10777,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10779,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10780,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10779,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10781,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10782,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10781,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10783,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10783,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10784,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10785,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10785,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10786,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10787,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10788,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10787,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10789,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10790,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10789,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10791,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10791,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10792,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10793,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10794,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10793,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10795,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10796,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10795,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10797,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10798,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10797,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10799,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10799,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10800,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10801,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10802,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10801,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10803,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10803,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10804,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10805,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 10.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10805,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10806,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10807,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 10.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10807,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10808,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10809,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 11.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10809,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10810,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10811,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 11.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10811,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10812,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10813,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 12.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10813,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10814,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10815,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 12.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10816,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10815,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10817,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 13.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10817,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10818,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10819,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 13.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10820,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10819,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10821,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 14.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10821,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10822,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10823,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 14.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10824,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10823,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10825,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 15.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10825,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10826,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10827,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 15.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10828,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10827,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10829,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 16.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10830,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10829,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10831,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 16.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10832,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10831,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10833,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 17.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10834,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10833,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10835,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 17.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10836,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10835,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10837,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 18.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10838,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10837,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10839,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 18.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10840,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10839,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10841,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 19.0,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10841,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10842,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10843,
+     "marketLength": 2,
+     "marketName": "Corners - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 19.5,
+     "period": "fulltime",
+     "marketType": "totals-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10844,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10843,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10845,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -8.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10846,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10845,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10847,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -7.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10847,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10848,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10849,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -7.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10849,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10850,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10851,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -6.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10852,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10851,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10853,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -6.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10854,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10853,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10855,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -5.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10855,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10856,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10857,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -5.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10857,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10858,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10859,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -4.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10859,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10860,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10861,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -4.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10862,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10861,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10863,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -3.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10863,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10864,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10865,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -3.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10866,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10865,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10867,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -2.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10868,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10867,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10869,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -2.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10869,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10870,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10871,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -1.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10871,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10872,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10873,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -1.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10873,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10874,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10875,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -0.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10876,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10875,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10877,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10877,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10878,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10879,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10879,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10880,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10881,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10881,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10882,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10883,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10883,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10884,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10885,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10885,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10886,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10887,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10887,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10888,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10889,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10889,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10890,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10891,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10891,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10892,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10893,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10893,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10894,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10895,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10895,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10896,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10897,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10897,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10898,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10899,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10899,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10900,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10901,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10901,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10902,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10903,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10903,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10904,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10905,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10906,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10905,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10907,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.5,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10908,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10907,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10909,
+     "marketLength": 2,
+     "marketName": "Corners - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.0,
+     "period": "fulltime",
+     "marketType": "spreads-corners",
+     "outcomes": [
+      {
+       "outcomeId": 10910,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10909,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10911,
+     "marketLength": 3,
+     "marketName": "Bookings - 1X2",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "fulltime",
+     "marketType": "1x2-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10912,
+       "outcomeName": "X"
+      },
+      {
+       "outcomeId": 10913,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10911,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10914,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10915,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10914,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10916,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10916,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10917,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10918,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10919,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10918,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10920,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10921,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10920,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10922,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10923,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10922,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10924,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10924,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10925,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10926,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10926,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10927,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10928,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10929,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10928,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10930,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10931,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10930,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10932,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10933,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10932,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10934,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10934,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10935,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10936,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10937,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10936,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10938,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10938,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10939,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10940,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10941,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10940,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10942,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10942,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10943,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10944,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10945,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10944,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10946,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10946,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10947,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10948,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10949,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10948,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10950,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10950,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10951,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10952,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 10.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10953,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10952,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10954,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 10.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10955,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10954,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10956,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 11.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10956,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10957,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10958,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 11.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10959,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10958,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10960,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 12.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10961,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10960,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10962,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 12.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10963,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10962,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10964,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 13.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10964,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10965,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10966,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 13.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10967,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 10966,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 10968,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 14.0,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10968,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10969,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10970,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Full Time",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 14.5,
+     "period": "fulltime",
+     "marketType": "totals-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10970,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 10971,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 10972,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -6.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10972,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10973,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10974,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -5.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10975,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10974,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10976,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -5.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10976,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10977,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10978,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -4.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10978,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10979,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10980,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -4.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10980,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10981,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10982,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -3.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10982,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10983,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10984,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -3.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10984,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10985,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10986,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -2.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10987,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10986,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10988,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -2.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10988,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10989,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10990,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -1.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10991,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10990,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10992,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -1.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10993,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10992,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 10994,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": -0.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10994,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10995,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10996,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10996,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 10997,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 10998,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 10999,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 10998,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101000,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101000,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 101001,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 101002,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101002,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 101003,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 101004,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101004,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 101005,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 101006,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101007,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101006,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101008,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101009,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101008,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101010,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101011,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101010,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101012,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101013,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101012,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101014,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101014,
+       "outcomeName": "1"
+      },
+      {
+       "outcomeId": 101015,
+       "outcomeName": "2"
+      }
+     ]
+    },
+    {
+     "marketId": 101016,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101017,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101016,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101018,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.5,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101019,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101018,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101020,
+     "marketLength": 2,
+     "marketName": "Bookings - Handicap",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.0,
+     "period": "fulltime",
+     "marketType": "spreads-bookings",
+     "outcomes": [
+      {
+       "outcomeId": 101021,
+       "outcomeName": "2"
+      },
+      {
+       "outcomeId": 101020,
+       "outcomeName": "1"
+      }
+     ]
+    },
+    {
+     "marketId": 101022,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 0.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101022,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101023,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101024,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101024,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101025,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101026,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 1.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101027,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101026,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101028,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101029,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101028,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101030,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 2.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101031,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101030,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101032,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101033,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101032,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101034,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 3.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101035,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101034,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101036,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101036,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101037,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101038,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 4.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101039,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101038,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101040,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101041,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101040,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101042,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 5.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101043,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101042,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101044,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101044,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101045,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101046,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 6.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101047,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101046,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101048,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101049,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101048,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101050,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 7.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101051,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101050,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101052,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101053,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101052,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101054,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 8.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101055,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101054,
+       "outcomeName": "Over"
+      }
+     ]
+    },
+    {
+     "marketId": 101056,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101056,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101057,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101058,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 9.5,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101058,
+       "outcomeName": "Over"
+      },
+      {
+       "outcomeId": 101059,
+       "outcomeName": "Under"
+      }
+     ]
+    },
+    {
+     "marketId": 101060,
+     "marketLength": 2,
+     "marketName": "Bookings - Over Under Team 1",
+     "playerProp": false,
+     "sportId": 10,
+     "handicap": 10.0,
+     "period": "fulltime",
+     "marketType": "teamtotals-bookings-team1",
+     "outcomes": [
+      {
+       "outcomeId": 101061,
+       "outcomeName": "Under"
+      },
+      {
+       "outcomeId": 101060,
+       "outcomeName": "Over"
+      }
+     ]
+    }
+   ]
+  },
+  "fixtures": {
+   "status": 200,
+   "with_odds": 1010
+  },
+  "odds": [
+   {
+    "fixtureId": "id1000109774155370",
+    "match": [
+     "FK Akron-2 Tolyatti",
+     "Pobeda Nizhny Novgorod",
+     "2026-11-01T05:00:00.000Z"
+    ],
+    "status": 200,
+    "markets_per_book": {}
+   },
+   {
+    "fixtureId": "id1005390875852392",
+    "match": [
+     "Arema FC",
+     "PSIS Semarang",
+     "2026-11-01T07:00:00.000Z"
+    ],
+    "status": 200,
+    "markets_per_book": {}
+   },
+   {
+    "fixtureId": "id1003580775409748",
+    "match": [
+     "Wong Tai Sin",
+     "Tsun Tat FC",
+     "2026-11-01T07:30:00.000Z"
+    ],
+    "status": 403,
+    "markets_per_book": {}
+   }
+  ]
+ }
+}
