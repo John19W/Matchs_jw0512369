@@ -36,8 +36,10 @@ for m in rows(d):
 
 # Le match
 today = datetime.datetime.utcnow().date()
-st, d = get("/fixtures", sportId=10, **{"from": str(today), "to": str(today + datetime.timedelta(days=1))})
-fx = [f for f in rows(d) if isinstance(f, dict) and TEAM in json.dumps(f).lower()]
+st, d = get("/fixtures", sportId=10, **{"from": str(today), "to": str(today + datetime.timedelta(days=8))})
+out["fixtures_status"] = st
+out["fixtures_total"] = len(rows(d))
+fx = [f for f in rows(d) if isinstance(f, dict) and TEAM in json.dumps(f).lower() and "fiorentina" in json.dumps(f).lower()]
 out["fixtures_trouves"] = [[f.get("participant1Name"), f.get("participant2Name"), f.get("startTime"), f.get("tournamentName")] for f in fx]
 
 out["odds"] = []
