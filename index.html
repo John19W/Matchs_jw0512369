@@ -287,16 +287,52 @@ function fold(){if(!document.querySelectorAll)return;[...document.querySelectorA
 const BKM=[["shots","Tirs",1],["cards","Cartons",4]],BKF=["t","h","a"];
 const bkKey=m=>"bk_"+m.d+"_"+m.h+"_"+m.a;
 function bkVals(m){try{return JSON.parse(localStorage.getItem(bkKey(m))||"{}")}catch(e){return{}}}
-function bkHtml(m){const V=bkVals(m),nm={t:"Total du match",h:m.h,a:m.a};
-return `<div class="sec"><h3>Lignes des books (à saisir)</h3><div class="sub" style="margin-bottom:8px">Tape la ligne proposée par le book (ex. 17,5) : la carte apparaît avec sa probabilité. Case vide = pas de carte. Les lignes sont gardées sur cet appareil pour ce match.</div>${BKM.map(([k,n])=>`<div class="sub" style="margin:8px 0 4px"><b>${n}</b></div><div class="ctl">${BKF.map(f=>`<label>${nm[f]}<input id="bk_${k}_${f}" type="number" step="0.5" value="${V[k+"_"+f]??""}" oninput="bk()"></label>`).join("")}</div>`).join("")}<div class="evg" id="bkres"></div></div>`}
+let BKO={};function bkHtml(m){const V=bkVals(m);BKO=V.o||{};const nm={t:"Total du match",h:m.h,a:m.a};
+return `<div class="sec"><h3>Lignes des books (à saisir)</h3><div class="sub" style="margin-bottom:8px">Tape la ligne proposée par le book (ex. 17,5) : la carte apparaît avec sa probabilité. Case vide = pas de carte. Les lignes sont gardées sur cet appareil pour ce match.</div>${BKM.map(([k,n])=>`<div class="sub" style="margin:8px 0 4px"><b>${n}</b></div><div class="ctl">${BKF.map(f=>`<label>${nm[f]}<input id="bk_${k}_${f}" type="number" step="0.5" value="${V[k+"_"+f]??""}" oninput="bk()"></label>`).join("")}</div>`).join("")}<div class="ctl"><label style="flex:2">📷 Ajouter une capture du book (ou colle-la avec Ctrl+V)<input id="bkimg" type="file" accept="image/*" multiple onchange="bkImg(this.files)"></label></div><div class="sub" id="bkst" style="margin-bottom:8px"></div><div class="evg" id="bkres"></div></div>`}
 function bk(){const m=sel;if(!m)return;const V={},out=[];
 BKM.forEach(([k,n,i])=>{BKF.forEach(f=>{const el=$("#bk_"+k+"_"+f),v=el?parseFloat(el.value):NaN;if(!isNaN(v)){V[k+"_"+f]=v;
-const fl=String(v).replace(".",","),mot=n.toLowerCase();let p,ob,lab;
+const fl=String(v).replace(".",","),mot=n.toLowerCase(),od=(q=>q&&{l:v,o:q[0],u:q[1]})((BKO[k+"_"+f]||{})[v]);let p,ob,lab;
 if(f==="t"){p=100*pO(MK[k].kind,muOf(k).mu,v,k);const a=[...samT(CM.h,k),...samT(CM.a,k)];ob=a.length?`observé ${a.filter(x=>x>v).length} / ${a.length} matchs`:"pas d'historique";lab=`${mot} du match`}
 else{const t=f==="h"?m.h:m.a,P=proj(CM.L,m.h,m.a,i),mu=f==="h"?P.lh:P.la,a=samp(CM.L,t,i).map(x=>x.o);p=100*pO(TL[k].k,mu,v,k);ob=a.length?`observé ${a.filter(x=>x>v).length} / ${a.length} matchs`:"pas d'historique";lab=`${t} : ${mot}`}
-if(isFinite(p)){out.push(tl(Math.round(p)+" %",`${lab} — plus de ${fl}`,ob+` · cote juste ${(100/p).toFixed(2)}`,lvp(p)));out.push(tl(Math.round(100-p)+" %",`${lab} — moins de ${fl}`,"cote juste "+(100/(100-p)).toFixed(2),lvp(100-p)))}}})});
-try{localStorage.setItem(bkKey(m),JSON.stringify(V))}catch(e){}
+if(isFinite(p)){const vb=(q,c)=>od&&od.l===v&&c?` · cote book ${c.toFixed(2)} (valeur ${(q*c/100-1)>=0?"+":""}${Math.round((q*c/100-1)*100)} %)`:"";out.push(tl(Math.round(p)+" %",`${lab} — plus de ${fl}`,ob+` · cote juste ${(100/p).toFixed(2)}`+vb(p,od&&od.o),lvp(p)));out.push(tl(Math.round(100-p)+" %",`${lab} — moins de ${fl}`,"cote juste "+(100/(100-p)).toFixed(2)+vb(100-p,od&&od.u),lvp(100-p)))}}})});
+V.o=BKO;try{localStorage.setItem(bkKey(m),JSON.stringify(V))}catch(e){}
 const r=$("#bkres");if(r)r.innerHTML=out.length?out.join(""):'<div class="sub">Aucune ligne saisie pour l\'instant.</div>'}
+
+const bkNz=x=>x.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+function bkParse(tx,m){const R={},H=bkNz(m.h).split(/[^a-z0-9]+/).filter(x=>x.length>2),A=bkNz(m.a).split(/[^a-z0-9]+/).filter(x=>x.length>2),th={};let sec=null,ri=0;
+const SW=/^(total|tirs|carton|cartons|cadres|match|matchs|nombre|equipe|plus|moins|dans|temps|exact|des|fc|ssc|afc|football|club)$/,cp=(a,b)=>{let i=0;while(i<a.length&&i<b.length&&a[i]===b[i])i++;return i},sc=(T,L)=>T.reduce((q,w)=>Math.max(q,L.reduce((r,x)=>{const c=cp(w,x);return c>=3&&c>=.5*Math.min(w.length,x.length)?Math.max(r,c):r},0)),0);
+const who=l=>{const L=l.split(/[^a-z0-9]+/).filter(x=>x.length>2&&!SW.test(x)),a=sc(H,L),b=sc(A,L);return a>b?"h":b>a?"a":null};
+const nl=x=>/^\d{1,2}[.,]5$/.test(x)?parseFloat(x.replace(",",".")):(/^\d{2,3}$/.test(x)&&x.endsWith("5")?parseInt(x)/10:null);
+const no=x=>{let v=null;if(/^\d{1,2}[.,]\d{1,2}$/.test(x))v=parseFloat(x.replace(",","."));else if(/^\d{2}$/.test(x))v=parseInt(x)/10;else if(/^\d{3}$/.test(x))v=parseInt(x)/100;return v!=null&&v>=1.01&&v<=60?v:null};
+const ok=(o,u)=>{const z=1/o+1/u;return z>1&&z<1.5};const add=(key,g)=>{const q=R[key]||(R[key]={});if(!q[g.l])q[g.l]=[g.o,g.u]};
+tx.split("\n").forEach(raw=>{const l=bkNz(raw);if(!l.trim()||/en cours/.test(l))return;
+const tk=l.match(/\d+(?:[.,]\d+)?/g)||[],hasL=tk.some(x=>nl(x)!=null),k=/carton/.test(l)?"cards":/cadr/.test(l)?"sot":/tirs/.test(l)?"shots":null;
+if(k&&!hasL){if(/exact|mi.?temps|periode|1re|2e /.test(l)){sec=null;return}const tn=/(tirs|carton\w*)( cadres)?\s*(-|de )\s*[a-z]/.test(l),ix=th[k]||0;if(tn)th[k]=ix+1;sec={k,mode:who(l)||(tn?(ix===0?"h":"a"):(/equipe/.test(l)?"team":(/match|total/.test(l)?"t":"team")))};ri=0;return}
+if(!sec||!hasL||(sec.k!=="shots"&&sec.k!=="cards"))return;
+const G=[];for(let i=0;i<tk.length;){const L=nl(tk[i]),o=L!=null&&i+1<tk.length?no(tk[i+1]):null;if(o==null){i++;continue}
+if(i+3<tk.length&&nl(tk[i+2])===L&&no(tk[i+3])!=null&&ok(o,no(tk[i+3]))){G.push({l:L,o,u:no(tk[i+3])});i+=4}
+else if(i+2<tk.length&&no(tk[i+2])!=null&&nl(tk[i+2])==null&&ok(o,no(tk[i+2]))){G.push({l:L,o,u:no(tk[i+2])});i+=3}
+else i+=1}
+if(sec.mode==="team"){if(G.length>=2){add(sec.k+"_h",G[0]);add(sec.k+"_a",G[1])}else if(G.length){add(sec.k+"_"+(who(l)||(ri===0?"h":"a")),G[0]);ri++}}
+else G.forEach(g=>add(sec.k+"_"+sec.mode,g))});return R}
+const bkMain=a=>{const e=Object.keys(a).map(l=>[parseFloat(l),a[l]]);e.sort((x,y)=>{const d=z=>z[1][0]&&z[1][1]?Math.abs(1/z[1][0]-1/z[1][1]):9;return d(x)-d(y)});return e[0][0]};
+const bkBook=t=>/plus de|moins de/i.test(t)?"Bet365":/[+-]\s?de\s?\d/i.test(t)?"Betclic":"autre",bkPri={Bet365:0,Betclic:1,autre:2};
+let TSW=null;
+function bkLoad(){return new Promise((ok,ko)=>{if(window.Tesseract)return ok();const e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js";e.onload=ok;e.onerror=()=>ko(new Error("load"));document.head.appendChild(e)})}
+function bkCut(im){const sw=600,sc=sw/im.width,h=Math.max(1,Math.round(im.height*sc)),c=document.createElement("canvas");c.width=sw;c.height=h;const x=c.getContext("2d");x.drawImage(im,0,0,sw,h);const q=x.getImageData(0,0,sw,h).data,sd=[];for(let i=0;i<sw;i++){let a=0,b=0;for(let j=0;j<h;j++){const k=(j*sw+i)*4,g=.299*q[k]+.587*q[k+1]+.114*q[k+2];a+=g;b+=g*g}const u=a/h;sd.push(Math.sqrt(Math.max(0,b/h-u*u)))}
+let best=null;for(let i=Math.floor(.3*sw);i<=Math.floor(.7*sw);){if(sd[i]<=3){let j=i;while(j+1<sw&&sd[j+1]<=3)j++;if(j-i+1>=3){const c0=(i+j)/2;if(best===null||Math.abs(c0-sw/2)<Math.abs(best-sw/2))best=c0}i=j+1}else i++}return best==null?null:Math.round(best/sc)}
+function bkPrep(im,inv,x0,w){const sc=Math.min(3,3000/w),c=document.createElement("canvas");c.width=Math.round(w*sc);c.height=Math.round(im.height*sc);const x=c.getContext("2d");x.drawImage(im,x0,0,w,im.height,0,0,c.width,c.height);const d=x.getImageData(0,0,c.width,c.height),q=d.data;for(let i=0;i<q.length;i+=4){let g=.299*q[i]+.587*q[i+1]+.114*q[i+2];if(inv)g=255-g;q[i]=q[i+1]=q[i+2]=g}x.putImageData(d,0,0);return c}
+async function bkImg(files){const st=$("#bkst"),m=sel;if(!m||!files||!files.length)return;
+try{st.textContent="Lecture de la capture… (la 1re fois, ça peut prendre 10 à 20 secondes)";await bkLoad();if(!TSW){TSW=await Tesseract.createWorker("eng");await TSW.setParameters({tessedit_pageseg_mode:"6"})}
+const PC=[];for(const fl of files){const im=await createImageBitmap(fl),ct=im.width/im.height>1.3?bkCut(im):null,zs=ct?[[0,ct],[ct,im.width-ct]]:[[0,im.width]];
+for(const[x0,w]of zs){const U={};let tx="";for(const inv of [true,false]){const r=await TSW.recognize(bkPrep(im,inv,x0,w)),t=r.data.text||"";tx+="\n"+t;const P=bkParse(t,m);for(const q in P){U[q]=U[q]||{};Object.assign(U[q],P[q])}}PC.push({b:bkBook(tx),U})}}
+PC.sort((x,y)=>bkPri[x.b]-bkPri[y.b]);const F={};PC.forEach(p=>{for(const q in p.U)if(!F[q])F[q]={b:p.b,a:p.U[q]}});
+const ks=Object.keys(F);if(!ks.length){st.textContent="Aucune ligne reconnue. Essaie une capture plus nette, avec le bon match ouvert, ou saisis la ligne à la main.";return}
+const nm={t:"match",h:m.h,a:m.a},fm=x=>String(x).replace(".",","),ot=[];
+ks.forEach(q=>{const l=bkMain(F[q].a),e=$("#bk_"+q);if(e)e.value=l;BKO[q]=F[q].a;F[q].l=l;const z=Object.keys(F[q].a).map(Number).filter(x=>x!==l).sort((x,y)=>x-y);if(z.length)ot.push((q.startsWith("shots")?"tirs":"cartons")+" "+nm[q.split("_")[1]]+" : "+z.map(fm).join(" · "))});bk();
+st.textContent="Lignes lues : "+ks.map(q=>{const[a,b]=q.split("_");return (a==="shots"?"tirs":"cartons")+" "+nm[b]+" "+fm(F[q].l)+(a==="shots"?" ("+F[q].b+")":"")}).join(" · ")+"."+(ot.length?" Autres lignes vues (tape-les dans la case pour les voir) — "+ot.join(" ; ")+".":"")+" Vérifie que c'est bien le bon match."}
+catch(e){st.textContent="Impossible de lire la capture (connexion internet ?). Tu peux saisir les lignes à la main."}}
+document.addEventListener("paste",e=>{if(!sel||!$("#bkimg"))return;const f=[...((e.clipboardData&&e.clipboardData.files)||[])].filter(x=>/^image\//.test(x.type));if(f.length){e.preventDefault();bkImg(f)}});
 function pick(i){const m0=all[i];unfreeze();if(m0.f){m0.e=S.find(q=>q[0]===m0.h&&q[1]===m0.a&&Math.abs(new Date(q[5])-new Date(m0.d))<=864e5)||null;freeze(m0.d)}sel=all[i];list();const m=sel,L=m.L;CM={L,h:m.h,a:m.a};ST={mk:"goals",sens:"o"};buildXM(m);
 const g=proj(L,m.h,m.a,null),sh=proj(L,m.h,m.a,1),co=proj(L,m.h,m.a,3),ca=proj(L,m.h,m.a,4),mod=p1x2(g.lh,g.la),has=m.p[0]!=null,pr=has?m.p:mod;
 const bt=100*(1-Math.exp(-g.lh))*(1-Math.exp(-g.la)),o25=100*pO("p",g.mu,2.5),A=cmp(L,m.h),B=cmp(L,m.a);
