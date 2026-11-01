@@ -1,0 +1,24 @@
+name: Test OddsPapi
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lancer le test
+        env:
+          ODDSPAPI_KEY: ${{ secrets.ODDSPAPI_KEY }}
+        run: python test_odds.py
+      - name: Enregistrer le résultat
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/test_odds.json
+          git commit -m "Résultat du test OddsPapi" || echo "rien à enregistrer"
+          git push
