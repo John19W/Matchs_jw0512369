@@ -109,6 +109,7 @@ details.sec[open]>summary{color:var(--ac);text-shadow:0 0 8px rgba(var(--acrgb),
 ::-webkit-scrollbar{height:8px;width:8px}::-webkit-scrollbar-thumb{background:rgba(var(--acrgb),.35);border-radius:6px}::-webkit-scrollbar-track{background:transparent}
 ::selection{background:rgba(var(--acrgb),.4)}
 @media(prefers-reduced-motion:reduce){.live{animation:none}.m,.tabs button{transition:none}}
+.bkg{margin:14px 0 6px;font-size:15px;font-weight:600}.bkc{border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px;background:var(--bg)}.bkt{font-weight:600;margin-bottom:8px}.bkt span{color:var(--mut);font-weight:400;margin-left:8px;font-size:13px}.bkp{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bkh{border:1px solid;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:4px;align-items:flex-start}.bkh b{font-size:24px;line-height:1}.bkx{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.03em}.bkb{font-size:11px;padding:1px 8px;border-radius:10px;white-space:nowrap}.bkh small{font-size:12px;color:var(--mut)}.bko{font-size:12px;color:var(--mut);margin-top:8px}
 </style></head><body>
 <header><h1>⚽ Matchs du jour — <span id="dtl"></span></h1>
 <div class="sub">Ligue 1 · Premier League · La Liga · Serie A · Bundesliga — heures de Paris. Données football-data.co.uk (5 derniers matchs). Clique un match pour ouvrir ses stats.</div>
@@ -288,15 +289,17 @@ const BKM=[["shots","Tirs",1],["cards","Cartons",4]],BKF=["t","h","a"];
 const bkKey=m=>"bk_"+m.d+"_"+m.h+"_"+m.a;
 function bkVals(m){try{return JSON.parse(localStorage.getItem(bkKey(m))||"{}")}catch(e){return{}}}
 let BKO={};function bkHtml(m){const V=bkVals(m);BKO=V.o||{};const nm={t:"Total du match",h:m.h,a:m.a};
-return `<div class="sec"><h3>Lignes des books (à saisir)</h3><div class="sub" style="margin-bottom:8px">Tape la ligne proposée par le book (ex. 17,5) : la carte apparaît avec sa probabilité. Case vide = pas de carte. Les lignes sont gardées sur cet appareil pour ce match.</div>${BKM.map(([k,n])=>`<div class="sub" style="margin:8px 0 4px"><b>${n}</b></div><div class="ctl">${BKF.map(f=>`<label>${nm[f]}<input id="bk_${k}_${f}" type="number" step="0.5" value="${V[k+"_"+f]??""}" oninput="bk()"></label>`).join("")}</div>`).join("")}<div class="ctl"><label style="flex:2">📷 Ajouter une capture du book (ou colle-la avec Ctrl+V)<input id="bkimg" type="file" accept="image/*" multiple onchange="bkImg(this.files)"></label></div><div class="sub" id="bkst" style="margin-bottom:8px"></div><div class="evg" id="bkres"></div></div>`}
-function bk(){const m=sel;if(!m)return;const V={},out=[];
+return `<div class="sec"><h3>Lignes des books (à saisir)</h3><div class="sub" style="margin-bottom:8px">Tape la ligne proposée par le book (ex. 17,5) : la carte apparaît avec sa probabilité. Case vide = pas de carte. Les lignes sont gardées sur cet appareil pour ce match.</div>${BKM.map(([k,n])=>`<div class="sub" style="margin:8px 0 4px"><b>${n}</b></div><div class="ctl">${BKF.map(f=>`<label>${nm[f]}<input id="bk_${k}_${f}" type="number" step="0.5" value="${V[k+"_"+f]??""}" oninput="bk()"></label>`).join("")}</div>`).join("")}<div class="ctl"><label style="flex:2">📷 Ajouter une capture du book (ou colle-la avec Ctrl+V)<input id="bkimg" type="file" accept="image/*" multiple onchange="bkImg(this.files)"></label></div><div class="sub" id="bkst" style="margin-bottom:8px"></div><div id="bkres"></div></div>`}
+function bk(){const m=sel;if(!m)return;const V={},G={};
 BKM.forEach(([k,n,i])=>{BKF.forEach(f=>{const el=$("#bk_"+k+"_"+f),v=el?parseFloat(el.value):NaN;if(!isNaN(v)){V[k+"_"+f]=v;
-const fl=String(v).replace(".",","),mot=n.toLowerCase(),od=(q=>q&&{l:v,o:q[0],u:q[1]})((BKO[k+"_"+f]||{})[v]);let p,ob,lab;
-if(f==="t"){p=100*pO(MK[k].kind,muOf(k).mu,v,k);const a=[...samT(CM.h,k),...samT(CM.a,k)];ob=a.length?`observé ${a.filter(x=>x>v).length} / ${a.length} matchs`:"pas d'historique";lab=`${mot} du match`}
-else{const t=f==="h"?m.h:m.a,P=proj(CM.L,m.h,m.a,i),mu=f==="h"?P.lh:P.la,a=samp(CM.L,t,i).map(x=>x.o);p=100*pO(TL[k].k,mu,v,k);ob=a.length?`observé ${a.filter(x=>x>v).length} / ${a.length} matchs`:"pas d'historique";lab=`${t} : ${mot}`}
-if(isFinite(p)){const vb=(q,c)=>od&&od.l===v&&c?` · cote book ${c.toFixed(2)} (valeur ${(q*c/100-1)>=0?"+":""}${Math.round((q*c/100-1)*100)} %)`:"";out.push(tl(Math.round(p)+" %",`${lab} — plus de ${fl}`,ob+` · cote juste ${(100/p).toFixed(2)}`+vb(p,od&&od.o),lvp(p)));out.push(tl(Math.round(100-p)+" %",`${lab} — moins de ${fl}`,"cote juste "+(100/(100-p)).toFixed(2)+vb(100-p,od&&od.u),lvp(100-p)))}}})});
+const fl=String(v).replace(".",","),od=(q=>q&&{l:v,o:q[0],u:q[1]})((BKO[k+"_"+f]||{})[v]);let p,ob,ti;
+if(f==="t"){p=100*pO(MK[k].kind,muOf(k).mu,v,k);const a=[...samT(CM.h,k),...samT(CM.a,k)];ob=a.length?`${a.filter(x=>x>v).length} / ${a.length}`:"";ti="Total du match"}
+else{const t=f==="h"?m.h:m.a,P=proj(CM.L,m.h,m.a,i),mu=f==="h"?P.lh:P.la,a=samp(CM.L,t,i).map(x=>x.o);p=100*pO(TL[k].k,mu,v,k);ob=a.length?`${a.filter(x=>x>v).length} / ${a.length}`:"";ti=t}
+if(!isFinite(p))return;
+const fc=x=>x.toFixed(2).replace(".",","),half=(sg,q,c)=>{const o=lvp(q),vl=od&&c?Math.round((q*c/100-1)*100):null;return `<div class="bkh" style="border-color:${o.c}66"><div class="bkx">${sg} ${fl}</div><b style="color:${o.c}">${Math.round(q)} %</b><span class="bkb" style="background:${o.bg};color:${o.fg};border:1px solid ${o.c}">${o.ic} ${o.t}</span><small>cote juste ${fc(100/q)}</small>${vl!=null?`<small style="color:${vl>=0?"#3fc47f":"var(--mut)"}">cote book ${fc(c)} · valeur ${vl>=0?"+":""}${vl} %</small>`:""}</div>`};
+(G[k]=G[k]||[]).push(`<div class="bkc"><div class="bkt">${ti}<span>ligne ${fl}</span></div><div class="bkp">${half("Plus de",p,od&&od.o)}${half("Moins de",100-p,od&&od.u)}</div>${ob?`<div class="bko">Historique : plus de ${fl} dans ${ob} derniers matchs</div>`:""}</div>`)}})});
 V.o=BKO;try{localStorage.setItem(bkKey(m),JSON.stringify(V))}catch(e){}
-const r=$("#bkres");if(r)r.innerHTML=out.length?out.join(""):'<div class="sub">Aucune ligne saisie pour l\'instant.</div>'}
+const r=$("#bkres"),h=BKM.filter(([k])=>G[k]).map(([k,n])=>`<div class="bkg">${n}</div>`+G[k].join("")).join("");if(r)r.innerHTML=h||'<div class="sub">Aucune ligne saisie pour l\'instant.</div>'}
 
 const bkNz=x=>x.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 function bkParse(tx,m){const R={},H=bkNz(m.h).split(/[^a-z0-9]+/).filter(x=>x.length>2),A=bkNz(m.a).split(/[^a-z0-9]+/).filter(x=>x.length>2),th={};let sec=null,ri=0;
