@@ -1,12 +1,13 @@
-# Test OddsPapi : quels books et quels marchés (tirs, cartons) sont disponibles ?
+# Test OddsPapi n°2 : lignes de tirs / cartons / corners sur de vrais matchs, chez nos books.
 # La clé est lue dans le secret GitHub ODDSPAPI_KEY. Elle n'est jamais écrite ni affichée.
 import os, json, time, datetime, urllib.request, urllib.parse, urllib.error
 
 KEY = os.environ.get("ODDSPAPI_KEY", "")
 BASE = "https://api.oddspapi.io/v4"
-WANTED = ["bet365", "betclic", "unibet", "winamax", "betify", "celsius", "pecbet"]
-KEYWORDS = ["shot", "card", "booking", "corner"]
-out = {"generated": datetime.datetime.utcnow().isoformat() + "Z", "steps": {}}
+LEAGUES = ["premier league", "serie a", "la liga", "laliga", "bundesliga", "ligue 1",
+           "champions league", "europa league", "conference league", "eredivisie", "primeira"]
+KEYS = ("shot", "booking", "card", "corner")
+out = {"generated": datetime.datetime.utcnow().isoformat() + "Z"}
 
 def get(path, **params):
     params["apiKey"] = KEY
@@ -20,45 +21,64 @@ def get(path, **params):
     except Exception as e:
         return 0, {"error": type(e).__name__}
 
-def rows(data):
-    if isinstance(data, list): return data
-    if isinstance(data, dict):
+def rows(d):
+    if isinstance(d, list): return d
+    if isinstance(d, dict):
         for k in ("data", "bookmakers", "markets", "fixtures"):
-            if isinstance(data.get(k), list): return data[k]
+            if isinstance(d.get(k), list): return d[k]
     return []
 
-# 1. Bookmakers : retrouver les slugs de nos books
-st, data = get("/bookmakers")
-books = rows(data)
-found = {}
-for w in WANTED:
-    found[w] = [b.get("slug") for b in books if isinstance(b, dict) and w in json.dumps(b).lower()][:6]
-out["steps"]["bookmakers"] = {"status": st, "total": len(books), "found": found}
-slugs = sorted({s for v in found.values() for s in v if s})
+# Books : on cherche les versions FRANCE (.fr) de nos books, sinon la version de base
+st, d = get("/bookmakers")
+allslugs = [b.get("slug") for b in rows(d) if isinstance(b, dict) and b.get("slug")]
+NAMES = ["bet365", "unibet", "winamax", "betify", "betclic", "celsius", "pecbet"]
+found = {n: sorted(x for x in allslugs if n in x.lower()) for n in NAMES}
+out["slugs_found"] = found
+BOOKS = []
+for n in ["bet365", "unibet", "winamax", "betify"]:
+    fr = [x for x in found[n] if x.lower().endswith(".fr") or x.lower() in (n + "-fr", n + "_fr")]
+    base = [x for x in found[n] if x.lower() == n]
+    BOOKS += fr + base
+BOOKS = list(dict.fromkeys(BOOKS))
+out["books_used"] = BOOKS
 
-# 2. Marchés : garder ceux qui parlent de tirs, cartons, corners
-st, data = get("/markets")
-mk = [m for m in rows(data) if any(k in json.dumps(m).lower() for k in KEYWORDS)]
-out["steps"]["markets"] = {"status": st, "kept": mk[:150]}
+# Catalogue des marchés utiles : id -> (type, nom, ligne)
+st, d = get("/markets")
+info = {}
+for m in rows(d):
+    if not isinstance(m, dict) or m.get("playerProp"): continue
+    t = str(m.get("marketType", "")).lower()
+    if any(k in t for k in KEYS):
+        info[str(m.get("marketId"))] = (m.get("marketType"), m.get("marketName"), m.get("handicap"))
+out["markets_catalog"] = {"status": st, "kept": len(info),
+                          "types": sorted({v[0] for v in info.values() if v[0]})}
 
-# 3. Matchs de foot avec cotes (aujourd'hui et demain)
+# Matchs des grands championnats (aujourd'hui + demain)
 today = datetime.datetime.utcnow().date()
-st, data = get("/fixtures", sportId=10, **{"from": str(today), "to": str(today + datetime.timedelta(days=1))})
-fx = [f for f in rows(data) if isinstance(f, dict) and f.get("hasOdds")]
-out["steps"]["fixtures"] = {"status": st, "with_odds": len(fx)}
+st, d = get("/fixtures", sportId=10, **{"from": str(today), "to": str(today + datetime.timedelta(days=2))})
+fx = [f for f in rows(d) if isinstance(f, dict) and f.get("hasOdds")]
+big = [f for f in fx if any(l in json.dumps(f).lower() for l in LEAGUES)]
+out["fixtures"] = {"status": st, "with_odds": len(fx), "big_leagues": len(big),
+                   "example_keys": sorted(fx[0].keys()) if fx else []}
+pick = (big or fx)[:4]
 
-# 4. Cotes de 3 matchs chez nos books
-out["steps"]["odds"] = []
-for f in fx[:3]:
+# Cotes de ces matchs chez nos 4 books
+out["odds"] = []
+for f in pick:
     fid = f.get("fixtureId")
-    st, d = get("/odds", fixtureId=fid, bookmakers=",".join(slugs[:25]))
+    st, d = get("/odds", fixtureId=fid, bookmakers=",".join(BOOKS))
     bo = d.get("bookmakerOdds", {}) if isinstance(d, dict) else {}
-    out["steps"]["odds"].append({
-        "fixtureId": fid,
-        "match": [f.get("participant1Name"), f.get("participant2Name"), f.get("startTime")],
-        "status": st,
-        "markets_per_book": {s: sorted((b.get("markets") or {}).keys()) for s, b in bo.items()},
-    })
+    res = {}
+    for slug, b in bo.items():
+        mk = (b or {}).get("markets") or {}
+        lines = {}
+        for mid, mdata in mk.items():
+            if mid in info:
+                typ, name, hcp = info[mid]
+                lines.setdefault(typ, []).append(hcp)
+        res[slug] = {"nb_marches_total": len(mk), "lignes": {k: sorted(set(v), key=lambda x: (x is None, x)) for k, v in lines.items()}}
+    out["odds"].append({"match": [f.get("participant1Name"), f.get("participant2Name"), f.get("startTime")],
+                        "status": st, "error": d.get("error") if isinstance(d, dict) else None, "books": res})
 
 os.makedirs("data", exist_ok=True)
 with open("data/test_odds.json", "w", encoding="utf-8") as fh:
