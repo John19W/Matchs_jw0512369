@@ -374,4 +374,21 @@ $("#dt").onchange=e=>{unfreeze();DAY=e.target.value;buildAll();list();$("#dtl").
 $("#rs").onclick=resetData;
 const pn=$("#panel");["dragenter","dragover"].forEach(v=>pn.addEventListener(v,e=>{e.preventDefault();pn.classList.add("drag")}));["dragleave","drop"].forEach(v=>pn.addEventListener(v,e=>{e.preventDefault();pn.classList.remove("drag")}));pn.addEventListener("drop",e=>ingest([...e.dataTransfer.files]));
 (function(){const b=[...document.querySelectorAll("#pal button")],set=p=>{document.documentElement.setAttribute("data-pal",p);b.forEach(x=>x.classList.toggle("on",x.dataset.p===p));try{localStorage.setItem("pal",p)}catch(e){}};b.forEach(x=>x.onclick=()=>set(x.dataset.p));set(document.documentElement.getAttribute("data-pal")||"cyan")})();
-</script></body></html>
+</script><script>
+(function(){
+var API="https://api.github.com/repos/John19W/Matchs_jw0512369/contents/data/lines.json",timer=null,H=function(){var t=tok(),h={Accept:"application/vnd.github+json"};if(t)h.Authorization="Bearer "+t;return h};
+function tok(){try{return localStorage.getItem("gh_tok")||""}catch(e){return""}}
+function dec(c){return JSON.parse(decodeURIComponent(escape(atob(String(c).replace(/\n/g,"")))))}
+function enc(o){return btoa(unescape(encodeURIComponent(JSON.stringify(o))))}
+function mine(){var o={};try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k.indexOf("bk_")===0)o[k]=localStorage.getItem(k)}}catch(e){}return o}
+function recent(o){var lim=new Date(Date.now()-7*864e5).toISOString().slice(0,10),r={};for(var k in o){var d=k.split("_")[1]||"";if(d>=lim)r[k]=o[k]}return r}
+var el=document.createElement("div");el.style.cssText="position:fixed;right:10px;bottom:8px;font-size:11px;opacity:.85;z-index:9;background:rgba(0,0,0,.45);padding:3px 8px;border-radius:8px";document.body.appendChild(el);
+function st(s){el.innerHTML=(s?s+" · ":"")+'<a href="#" id="syn" style="color:inherit">'+(tok()?"clé enregistrée":"Synchro")+"</a>"}
+el.addEventListener("click",function(e){if(e.target.id!=="syn")return;e.preventDefault();var v=prompt("Colle ta clé GitHub (à faire une seule fois, sur le PC où tu fais tes captures). Laisse vide pour la retirer.",tok());if(v===null)return;try{v.trim()?localStorage.setItem("gh_tok",v.trim()):localStorage.removeItem("gh_tok")}catch(x){}st("");if(v.trim())push()});
+async function pull(){try{var r=await fetch(API+"?t="+Date.now(),{headers:H()});if(!r.ok){st(r.status===404?"":"");return}var j=await r.json(),rem=dec(j.content),n=0,w=!!tok();for(var k in rem){if(w&&localStorage.getItem(k)!==null)continue;if(localStorage.getItem(k)!==rem[k]){localStorage.setItem(k,rem[k]);n++}}if(n){try{list()}catch(e){}st("Lignes mises à jour")}else st("")}catch(e){st("")}}
+async function push(){var t=tok();if(!t)return;try{var h=H(),sh,rem={},r=await fetch(API+"?t="+Date.now(),{headers:h});if(r.ok){var j=await r.json();sh=j.sha;rem=dec(j.content)}var all=recent(Object.assign({},rem,mine())),b={message:"lignes des books",content:enc(all)};if(sh)b.sha=sh;var p=await fetch(API,{method:"PUT",headers:h,body:JSON.stringify(b)});st(p.ok?"Lignes synchronisées":"Synchro refusée ("+p.status+") : vérifie la clé")}catch(e){st("Synchro impossible")}}
+var _s=Storage.prototype.setItem;Storage.prototype.setItem=function(k,v){_s.call(this,k,v);if(String(k).indexOf("bk_")===0&&tok()){clearTimeout(timer);timer=setTimeout(push,2500)}};
+st("");pull();
+})();
+</script>
+</body></html>
