@@ -110,6 +110,20 @@ details.sec[open]>summary{color:var(--ac);text-shadow:0 0 8px rgba(var(--acrgb),
 ::selection{background:rgba(var(--acrgb),.4)}
 @media(prefers-reduced-motion:reduce){.live{animation:none}.m,.tabs button{transition:none}}
 .bkg{margin:14px 0 6px;font-size:15px;font-weight:600}.bkc{border:1px solid var(--bd);border-radius:12px;padding:10px;margin-bottom:10px;background:var(--bg)}.bkt{font-weight:600;margin-bottom:8px}.bkt span{color:var(--mut);font-weight:400;margin-left:8px;font-size:13px}.bkp{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bkh{border:1px solid;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:4px;align-items:flex-start}.bkh b{font-size:24px;line-height:1}.bkx{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.03em}.bkb{font-size:11px;padding:1px 8px;border-radius:10px;white-space:nowrap}.bkh small{font-size:12px;color:var(--mut)}.bko{font-size:12px;color:var(--mut);margin-top:8px}
+.m.r-top,.m.r-hi,.m.r-mid,.m.r-bad{position:relative;padding-top:20px}
+.m.r-top:not(.sel){border-color:#2f8f5b}.m.r-hi:not(.sel){border-color:#4ade80}.m.r-mid:not(.sel){border-color:#2a5fa0}.m.r-bad:not(.sel){border-color:#ff4d6d}
+.rb{position:absolute;top:-1px;right:14px;font-size:11px;padding:2px 10px;border-radius:0 0 6px 6px;border:1px solid;border-top:none;white-space:nowrap}
+.bdg{font-size:10.5px;padding:1px 7px;border-radius:5px;border:1px solid;white-space:nowrap;display:inline-block;margin-top:3px}
+.r-top.rb,.r-top.bdg{background:#2f8f5b;color:#eafff2;border-color:#2f8f5b;font-weight:500}
+.r-hi.rb,.r-hi.bdg{background:transparent;color:#6ee7a8;border-color:#4ade80}
+.r-mid.rb,.r-mid.bdg{background:rgba(56,138,221,.15);color:#85B7EB;border-color:#2a5fa0}
+.r-bad.rb,.r-bad.bdg{background:#ff4d6d;color:#2a0610;border-color:#ff4d6d}
+.t5{background:#0f1f3d;border:1px solid #2a4a85;border-radius:12px;padding:12px 12px 4px;margin-bottom:10px}
+.t5h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}.t5h b{font-size:15px}.t5h span{font-size:11px;color:#a8b3cc}
+.t5r{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.08);cursor:pointer}.t5h+.t5r{border-top:none}
+.t5n{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.t5x{flex:1;min-width:0}.t5x div:first-child{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.t5x div+div{font-size:11px;color:#a8b3cc}
+.t5p{text-align:right;flex-shrink:0}.t5p b{font-size:15px;display:block}
 </style></head><body>
 <header><h1>⚽ Matchs du jour — <span id="dtl"></span></h1>
 <div class="sub">Ligue 1 · Premier League · La Liga · Serie A · Bundesliga — heures de Paris. Données football-data.co.uk (5 derniers matchs). Clique un match pour ouvrir ses stats.</div>
@@ -178,11 +192,14 @@ function stTiles(m,T){const e=m.e,O=e?[sh1(e[2][1],1)+sh1(e[3][1],1),e[2][2]+e[3
 return K.map(([k,n,l],i)=>{const mu=m.pm?m.pm[i]:null,a=O[i],ok=mu!=null&&isFinite(mu),has=a!=null&&!isNaN(a),pr=ok?Math.round(100*pO(MK[k].kind,mu,l)):null;return T(has?a:"—",n+" (réel)",(ok?"Attendu : "+mu.toFixed(1)+" · +"+l+" : "+pr+" %":"")+(has?" → "+(a>l?"Oui":"Non"):(e?"":" · pas encore dans les CSV")),has&&ok?(pr>=50)===(a>l):null)})}
 function predAt(x){const run=()=>({g:proj(x.L,x.h,x.a,null),sh:proj(x.L,x.h,x.a,1),so:proj(x.L,x.h,x.a,2),co:proj(x.L,x.h,x.a,3),ca:proj(x.L,x.h,x.a,4)});if(!x.f)return run();const sv={},sS=S.slice();for(const k in D){sv[k]=D[k].r;D[k].r=D[k].r.filter(r=>r[4]<x.d)}const ks=sS.filter(q=>q[5]<x.d);S.length=0;ks.forEach(q=>S.push(q));try{return run()}finally{for(const k in sv)D[k].r=sv[k];S.length=0;sS.forEach(q=>S.push(q))}}
 const BP={};function bestPick(m){const k=m.L+"|"+m.h+"|"+m.a+"|"+m.d;if(k in BP)return BP[k];let r=null;const c0=CM;try{if(!m.f&&!m.live&&D[m.L]&&D[m.L].r.length){const L=m.L;CM={L,h:m.h,a:m.a};const g=proj(L,m.h,m.a,null),A=cmp(L,m.h),B=cmp(L,m.a),has=m.p&&m.p[0]!=null,pr=has?m.p:p1x2(g.lh,g.la);const ev=events(m,g,pr,A,B,has).filter(e=>e.c!=="Concédés"&&e.c!=="Résultat"&&!/^(Plus de [01]\.5|Moins de [3-9]\.5) buts$/i.test(e.l)&&!/(^|[^\d.,])0[.,]5(?![\d])|\bmarque$/.test(e.l));ev.sort((a,b)=>b.p-a.p);r=ev[0]||null}}catch(e){}CM=c0;return BP[k]=r}
-function bpH(m){const e=bestPick(m);if(!e)return"";const o=lvE(e);return `<div class="bp" style="grid-column:2/4;font-size:11.5px;margin-top:2px"><span style="color:${o.c};font-weight:600">${o.ic} ${o.t}</span> · ${e.l} · ${Math.round(e.p)} %</div>`}
-function list(){let h="",last="";all.filter(m=>cur==="Europe"?!!m.C:(cur==="Tous"||(m.L===cur&&!m.C))).forEach(m=>{
+function bpH(m){const e=bestPick(m);if(!e)return"";return `<div class="bp" style="grid-column:2/4;font-size:11.5px;margin-top:2px">${e.l} · ${Math.round(e.p)} %</div>`}
+const LRT={top:"Top confiance",hi:"Confiance élevée",mid:"Confiance moyenne",bad:"À éviter"};
+function lrk(e){const o=lvE(e);return o===LV.top?"top":o===LV.hi?"hi":o===LV.mid?"mid":"bad"}
+function top5H(ms){const r=ms.map(m=>({m,e:bestPick(m)})).filter(x=>x.e).sort((a,b)=>b.e.p-a.e.p).slice(0,5);if(!r.length)return"";return `<div class="t5"><div class="t5h"><b>Top 5 du jour</b><span>Meilleurs paris, tous matchs confondus</span></div>`+r.map((x,i)=>{const k=lrk(x.e);return `<div class="t5r" onclick="pick(${all.indexOf(x.m)})"><div class="t5n">${i+1}</div><div class="t5x"><div>${x.m.h} – ${x.m.a}</div><div>${x.m.t} · ${x.m.C||x.m.L} · ${x.e.l}</div></div><div class="t5p"><b>${Math.round(x.e.p)} %</b><span class="bdg r-${k}">${LRT[k]}</span></div></div>`}).join("")+`</div>`}
+function list(){let h="",last="";const fl=all.filter(m=>cur==="Europe"?!!m.C:(cur==="Tous"||(m.L===cur&&!m.C)));h+=top5H(fl);fl.forEach(m=>{
 if(m.L!==last&&cur==="Tous"){}
 const [ph,pd,pa]=m.p||[null,null,null],pb=ph!=null?`<div class="pb"><i style="width:${ph}%;background:var(--h)"></i><i style="width:${pd}%;background:var(--d)"></i><i style="width:${pa}%;background:var(--a)"></i></div>`:"";
-h+=`<button class="m ${sel===m?"sel":""}" onclick="pick(${all.indexOf(m)})"><div class="t ${m.live?"live":""}">${m.f&&m.s?m.s[0]+"–"+m.s[1]:(m.live?"LIVE":m.t)}</div><div><div class="tm">${m.h}</div><div class="tm">${m.a}</div></div><div class="pn">${m.C||m.L}<br>${ph!=null?ph+"% · "+pd+"% · "+pa+"%"+(m.f&&m.s?vd(m):""):(m.f?"terminé":"en cours")}</div>${bpH(m)}${pb}</button>`});
+const be=bestPick(m),lk=be?lrk(be):"";h+=`<button class="m ${sel===m?"sel":""}${lk?" r-"+lk:""}" onclick="pick(${all.indexOf(m)})">${lk?`<span class="rb r-${lk}">${LRT[lk]}</span>`:""}<div class="t ${m.live?"live":""}">${m.f&&m.s?m.s[0]+"–"+m.s[1]:(m.live?"LIVE":m.t)}</div><div><div class="tm">${m.h}</div><div class="tm">${m.a}</div></div><div class="pn">${m.C||m.L}<br>${ph!=null?ph+"% · "+pd+"% · "+pa+"%"+(m.f&&m.s?vd(m):""):(m.f?"terminé":"en cours")}</div>${bpH(m)}${pb}</button>`});
 $("#list").innerHTML=h||`<div class="empty">Aucun match le ${frD(DAY)}. Charge fixtures.csv ou change le jour.</div>`}
 const SO=1,sh1=(v,i)=>i===1?Math.max(0,v-SO):v;
 function res(L,t){return Object.values(D).flatMap(q=>q.r).filter(r=>r[0]===t||r[1]===t).slice(-5).map(r=>{const home=r[0]===t,gf=home?r[2]:r[3],ga=home?r[3]:r[2];return{home,d:r[4],gf,ga,o:home?r[1]:r[0],r:gf>ga?"W":gf<ga?"L":"D"}})}
